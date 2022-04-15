@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>591065127995-vb5gamu7q72b0om1qbct30kbamfbso1q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.591065127995-vb5gamu7q72b0om1qbct30kbamfbso1q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDDqoa_gavMVetyjrrfnDAUpFgTTeUDVnY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>591065127995</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.noahyin.Fitspo</string>
+	<key>PROJECT_ID</key>
+	<string>fitspo-a9673</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fitspo-a9673.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:591065127995:ios:7966dfd47e17233162d01e</string>
+</dict>
+</plist>
