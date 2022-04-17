@@ -134,7 +134,7 @@ class SigninVC: UIViewController {
             signUpActionLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
         ])
         
-//        signUpActionLabel.addTarget(self, action: #selector(didTapSignUp(_:)), for: .touchUpInside)
+        signUpActionLabel.addTarget(self, action: #selector(didTapSignUp(_:)), for: .touchUpInside)
     }
 
     @objc private func didTapSignIn(_ sender: UIButton) {
@@ -180,11 +180,11 @@ class SigninVC: UIViewController {
         }
     }
     
-//    @objc private func didTapSignUp(_ sender: UIButton) {
-//        let vc = SignUpVC()
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true, completion: nil)
-//    }
+    @objc private func didTapSignUp(_ sender: UIButton) {
+        let vc = SignUpVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
     
     private func showErrorBanner(withTitle title: String, subtitle: String? = nil) {
         showBanner(withStyle: .warning, title: title, subtitle: subtitle)
