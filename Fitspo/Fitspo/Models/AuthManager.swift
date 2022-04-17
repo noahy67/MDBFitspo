@@ -78,7 +78,7 @@ class AuthManager {
     func signUp(withEmail email: String, password: String, name: String, username: String,
                 completion: ((Result<User, SignUpErrors>)->Void)?) {
         
-        auth.createUser(withEmail: email, password: password) {[weak self] authResult, error in
+        auth.createUser(withEmail: email, password: password) { [weak self] authResult, error in
             if let error = error {
                 let nsError = error as NSError
                 let errorCode = FirebaseAuth.AuthErrorCode(rawValue: nsError.code)
