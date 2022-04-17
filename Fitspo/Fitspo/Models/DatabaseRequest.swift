@@ -19,8 +19,11 @@ class DatabaseRequest {
         do {
             try db.collection("users").document(uid).setData(from: user)
             completion?()
+            
         }
-        catch { }
+        catch {
+            print("fuck you")
+        }
     }
     
 //    func setEvent(_ event: Event, completion: (()->Void)?) {

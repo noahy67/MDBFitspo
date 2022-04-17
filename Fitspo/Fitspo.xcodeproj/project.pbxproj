@@ -13,7 +13,6 @@
 		9D51C0072807AEA20056CBF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D51C0052807AEA20056CBF5 /* Main.storyboard */; };
 		9D51C0092807AEA30056CBF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D51C0082807AEA30056CBF5 /* Assets.xcassets */; };
 		9D51C00C2807AEA30056CBF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D51C00A2807AEA30056CBF5 /* LaunchScreen.storyboard */; };
-		9D51C0142808F3510056CBF5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D51C0132808F3510056CBF5 /* GoogleService-Info.plist */; };
 		9D51C0172808F4260056CBF5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9D51C0162808F4260056CBF5 /* FirebaseAnalytics */; };
 		9D51C0192808F4260056CBF5 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9D51C0182808F4260056CBF5 /* FirebaseAnalyticsSwift-Beta */; };
 		9D51C01B2808F4260056CBF5 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9D51C01A2808F4260056CBF5 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -56,6 +55,8 @@
 		9D9A4468280CAAD80002E97B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4467280CAAD80002E97B /* SignInVC.swift */; };
 		9D9A446B280CABA70002E97B /* NotificationBannerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9D9A446A280CABA70002E97B /* NotificationBannerSwift */; };
 		9D9A446D280CAC110002E97B /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A446C280CAC110002E97B /* SignUpVC.swift */; };
+		9D9A4472280CC5170002E97B /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A4471280CC5170002E97B /* Feed.storyboard */; };
+		9D9A4476280CC7950002E97B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A4475280CC7950002E97B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +68,6 @@
 		9D51C0082807AEA30056CBF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D51C00B2807AEA30056CBF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D51C00D2807AEA30056CBF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D51C0132808F3510056CBF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D9A4451280CA60A0002E97B /* UIColor+ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorScheme.swift"; sourceTree = "<group>"; };
 		9D9A4453280CA6DD0002E97B /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		9D9A4455280CA7300002E97B /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
@@ -81,6 +81,8 @@
 		9D9A4465280CAA420002E97B /* WardrobeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeItem.swift; sourceTree = "<group>"; };
 		9D9A4467280CAAD80002E97B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		9D9A446C280CAC110002E97B /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		9D9A4471280CC5170002E97B /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		9D9A4475280CC7950002E97B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,7 @@
 				9D9A444A280CA44A0002E97B /* Extensions */,
 				9D51C0082807AEA30056CBF5 /* Assets.xcassets */,
 				9D51C00D2807AEA30056CBF5 /* Info.plist */,
-				9D51C0132808F3510056CBF5 /* GoogleService-Info.plist */,
+				9D9A4475280CC7950002E97B /* GoogleService-Info.plist */,
 			);
 			path = Fitspo;
 			sourceTree = "<group>";
@@ -169,6 +171,7 @@
 			children = (
 				9D51C0052807AEA20056CBF5 /* Main.storyboard */,
 				9D51C00A2807AEA30056CBF5 /* LaunchScreen.storyboard */,
+				9D9A4471280CC5170002E97B /* Feed.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -300,8 +303,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9A4472280CC5170002E97B /* Feed.storyboard in Resources */,
 				9D51C00C2807AEA30056CBF5 /* LaunchScreen.storyboard in Resources */,
-				9D51C0142808F3510056CBF5 /* GoogleService-Info.plist in Resources */,
+				9D9A4476280CC7950002E97B /* GoogleService-Info.plist in Resources */,
 				9D51C0092807AEA30056CBF5 /* Assets.xcassets in Resources */,
 				9D51C0072807AEA20056CBF5 /* Main.storyboard in Resources */,
 			);

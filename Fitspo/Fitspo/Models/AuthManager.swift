@@ -99,8 +99,8 @@ class AuthManager {
                 return
             }
             
-            let input = User(uid: authResult.user.uid, username: username, email: email, fullname: name, userBio: "", photoURL: "", allPosts: [], friends: [], savedPosts: [], userWardrobe: [])
-            DatabaseRequest.shared.setUser(input, completion: nil)
+            let input: User = User(uid: authResult.user.uid, username: username, email: email, fullname: name, userBio: "", photoURL: "", allPosts: [], friends: [], savedPosts: [], userWardrobe: [])
+            DatabaseRequest.shared.setUser(input) { () }
             self?.linkUser2(withuid: authResult.user.uid, completion: completion)
         }
         
