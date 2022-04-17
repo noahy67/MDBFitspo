@@ -42,6 +42,20 @@
 		9D51C0492808F4260056CBF5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D51C0482808F4260056CBF5 /* FirebaseStorage */; };
 		9D51C04B2808F4260056CBF5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 9D51C04A2808F4260056CBF5 /* FirebaseStorageCombine-Community */; };
 		9D51C04D2808F4260056CBF5 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9D51C04C2808F4260056CBF5 /* FirebaseStorageSwift-Beta */; };
+		9D9A4452280CA60A0002E97B /* UIColor+ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4451280CA60A0002E97B /* UIColor+ColorScheme.swift */; };
+		9D9A4454280CA6DD0002E97B /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4453280CA6DD0002E97B /* UIColor+Hex.swift */; };
+		9D9A4456280CA7300002E97B /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4455280CA7300002E97B /* UIViewController+HideKeyboard.swift */; };
+		9D9A4458280CA7860002E97B /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4457280CA7860002E97B /* AuthTextField.swift */; };
+		9D9A445A280CA7BA0002E97B /* HorizontalActionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4459280CA7BA0002E97B /* HorizontalActionLabel.swift */; };
+		9D9A445C280CA7F20002E97B /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A445B280CA7F20002E97B /* LoadingButton.swift */; };
+		9D9A445E280CA8720002E97B /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A445D280CA8720002E97B /* AuthManager.swift */; };
+		9D9A4460280CA8FD0002E97B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A445F280CA8FD0002E97B /* User.swift */; };
+		9D9A4462280CA95A0002E97B /* DatabaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4461280CA95A0002E97B /* DatabaseRequest.swift */; };
+		9D9A4464280CAA1D0002E97B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4463280CAA1D0002E97B /* Post.swift */; };
+		9D9A4466280CAA420002E97B /* WardrobeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4465280CAA420002E97B /* WardrobeItem.swift */; };
+		9D9A4468280CAAD80002E97B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4467280CAAD80002E97B /* SignInVC.swift */; };
+		9D9A446B280CABA70002E97B /* NotificationBannerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9D9A446A280CABA70002E97B /* NotificationBannerSwift */; };
+		9D9A446D280CAC110002E97B /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A446C280CAC110002E97B /* SignUpVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +68,19 @@
 		9D51C00B2807AEA30056CBF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D51C00D2807AEA30056CBF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D51C0132808F3510056CBF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D9A4451280CA60A0002E97B /* UIColor+ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorScheme.swift"; sourceTree = "<group>"; };
+		9D9A4453280CA6DD0002E97B /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		9D9A4455280CA7300002E97B /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
+		9D9A4457280CA7860002E97B /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		9D9A4459280CA7BA0002E97B /* HorizontalActionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalActionLabel.swift; sourceTree = "<group>"; };
+		9D9A445B280CA7F20002E97B /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		9D9A445D280CA8720002E97B /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		9D9A445F280CA8FD0002E97B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9D9A4461280CA95A0002E97B /* DatabaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRequest.swift; sourceTree = "<group>"; };
+		9D9A4463280CAA1D0002E97B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		9D9A4465280CAA420002E97B /* WardrobeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeItem.swift; sourceTree = "<group>"; };
+		9D9A4467280CAAD80002E97B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		9D9A446C280CAC110002E97B /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +95,7 @@
 				9D51C0212808F4260056CBF5 /* FirebaseAuth in Frameworks */,
 				9D51C04D2808F4260056CBF5 /* FirebaseStorageSwift-Beta in Frameworks */,
 				9D51C0192808F4260056CBF5 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
+				9D9A446B280CABA70002E97B /* NotificationBannerSwift in Frameworks */,
 				9D51C0472808F4260056CBF5 /* FirebaseRemoteConfigSwift-Beta in Frameworks */,
 				9D51C03F2808F4260056CBF5 /* FirebaseMLModelDownloader in Frameworks */,
 				9D51C02D2808F4260056CBF5 /* FirebaseFirestore in Frameworks */,
@@ -114,16 +142,69 @@
 		9D51BFFE2807AEA20056CBF5 /* Fitspo */ = {
 			isa = PBXGroup;
 			children = (
-				9D51BFFF2807AEA20056CBF5 /* AppDelegate.swift */,
-				9D51C0012807AEA20056CBF5 /* SceneDelegate.swift */,
-				9D51C0032807AEA20056CBF5 /* ViewController.swift */,
-				9D51C0052807AEA20056CBF5 /* Main.storyboard */,
+				9D9A4450280CA4AC0002E97B /* Support Files */,
+				9D9A444E280CA4940002E97B /* Models */,
+				9D9A444D280CA46C0002E97B /* Onboarding */,
+				9D9A444C280CA4640002E97B /* Storyboard */,
+				9D9A444A280CA44A0002E97B /* Extensions */,
 				9D51C0082807AEA30056CBF5 /* Assets.xcassets */,
-				9D51C0132808F3510056CBF5 /* GoogleService-Info.plist */,
-				9D51C00A2807AEA30056CBF5 /* LaunchScreen.storyboard */,
 				9D51C00D2807AEA30056CBF5 /* Info.plist */,
+				9D51C0132808F3510056CBF5 /* GoogleService-Info.plist */,
 			);
 			path = Fitspo;
+			sourceTree = "<group>";
+		};
+		9D9A444A280CA44A0002E97B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D9A4451280CA60A0002E97B /* UIColor+ColorScheme.swift */,
+				9D9A4453280CA6DD0002E97B /* UIColor+Hex.swift */,
+				9D9A4455280CA7300002E97B /* UIViewController+HideKeyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9D9A444C280CA4640002E97B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9D51C0052807AEA20056CBF5 /* Main.storyboard */,
+				9D51C00A2807AEA30056CBF5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9D9A444D280CA46C0002E97B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9D51C0032807AEA20056CBF5 /* ViewController.swift */,
+				9D9A4457280CA7860002E97B /* AuthTextField.swift */,
+				9D9A4459280CA7BA0002E97B /* HorizontalActionLabel.swift */,
+				9D9A445B280CA7F20002E97B /* LoadingButton.swift */,
+				9D9A4467280CAAD80002E97B /* SignInVC.swift */,
+				9D9A446C280CAC110002E97B /* SignUpVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9D9A444E280CA4940002E97B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9D9A445D280CA8720002E97B /* AuthManager.swift */,
+				9D9A445F280CA8FD0002E97B /* User.swift */,
+				9D9A4461280CA95A0002E97B /* DatabaseRequest.swift */,
+				9D9A4463280CAA1D0002E97B /* Post.swift */,
+				9D9A4465280CAA420002E97B /* WardrobeItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D9A4450280CA4AC0002E97B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D51BFFF2807AEA20056CBF5 /* AppDelegate.swift */,
+				9D51C0012807AEA20056CBF5 /* SceneDelegate.swift */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +252,7 @@
 				9D51C0482808F4260056CBF5 /* FirebaseStorage */,
 				9D51C04A2808F4260056CBF5 /* FirebaseStorageCombine-Community */,
 				9D51C04C2808F4260056CBF5 /* FirebaseStorageSwift-Beta */,
+				9D9A446A280CABA70002E97B /* NotificationBannerSwift */,
 			);
 			productName = Fitspo;
 			productReference = 9D51BFFC2807AEA20056CBF5 /* Fitspo.app */;
@@ -202,6 +284,7 @@
 			mainGroup = 9D51BFF32807AEA20056CBF5;
 			packageReferences = (
 				9D51C0152808F4260056CBF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner" */,
 			);
 			productRefGroup = 9D51BFFD2807AEA20056CBF5 /* Products */;
 			projectDirPath = "";
@@ -231,9 +314,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9A4466280CAA420002E97B /* WardrobeItem.swift in Sources */,
+				9D9A445C280CA7F20002E97B /* LoadingButton.swift in Sources */,
+				9D9A4452280CA60A0002E97B /* UIColor+ColorScheme.swift in Sources */,
+				9D9A4462280CA95A0002E97B /* DatabaseRequest.swift in Sources */,
 				9D51C0042807AEA20056CBF5 /* ViewController.swift in Sources */,
+				9D9A4464280CAA1D0002E97B /* Post.swift in Sources */,
+				9D9A4458280CA7860002E97B /* AuthTextField.swift in Sources */,
 				9D51C0002807AEA20056CBF5 /* AppDelegate.swift in Sources */,
+				9D9A446D280CAC110002E97B /* SignUpVC.swift in Sources */,
+				9D9A4456280CA7300002E97B /* UIViewController+HideKeyboard.swift in Sources */,
 				9D51C0022807AEA20056CBF5 /* SceneDelegate.swift in Sources */,
+				9D9A445A280CA7BA0002E97B /* HorizontalActionLabel.swift in Sources */,
+				9D9A4454280CA6DD0002E97B /* UIColor+Hex.swift in Sources */,
+				9D9A445E280CA8720002E97B /* AuthManager.swift in Sources */,
+				9D9A4460280CA8FD0002E97B /* User.swift in Sources */,
+				9D9A4468280CAAD80002E97B /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +557,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Daltron/NotificationBanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -603,6 +707,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9D51C0152808F4260056CBF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
+		};
+		9D9A446A280CABA70002E97B /* NotificationBannerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner" */;
+			productName = NotificationBannerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -83,6 +83,15 @@
         }
       },
       {
+        "package": "MarqueeLabel",
+        "repositoryURL": "https://github.com/cbpowell/MarqueeLabel",
+        "state": {
+          "branch": null,
+          "revision": "f2c72a5f8568579dade6350dc26a482076d3d346",
+          "version": "4.3.0"
+        }
+      },
+      {
         "package": "nanopb",
         "repositoryURL": "https://github.com/firebase/nanopb.git",
         "state": {
@@ -92,12 +101,30 @@
         }
       },
       {
+        "package": "NotificationBannerSwift",
+        "repositoryURL": "https://github.com/Daltron/NotificationBanner.git",
+        "state": {
+          "branch": null,
+          "revision": "e856a462053daf80c7936056d64246983f3f4d14",
+          "version": "3.1.0"
+        }
+      },
+      {
         "package": "Promises",
         "repositoryURL": "https://github.com/google/promises.git",
         "state": {
           "branch": null,
           "revision": "46c1e6b5ac09d8f82c991061c659f67e573d425d",
           "version": "2.1.0"
+        }
+      },
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit",
+        "state": {
+          "branch": null,
+          "revision": "f222cbdf325885926566172f6f5f06af95473158",
+          "version": "5.6.0"
         }
       },
       {
