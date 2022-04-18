@@ -181,8 +181,8 @@
 		9D9A444C280CA4640002E97B /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				9D51C0052807AEA20056CBF5 /* Main.storyboard */,
 				9D51C00A2807AEA30056CBF5 /* LaunchScreen.storyboard */,
+				9D51C0052807AEA20056CBF5 /* Main.storyboard */,
 				9D9A4471280CC5170002E97B /* Feed.storyboard */,
 			);
 			path = Storyboard;
