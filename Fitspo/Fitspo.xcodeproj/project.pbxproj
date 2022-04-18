@@ -57,6 +57,10 @@
 		9D9A446D280CAC110002E97B /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A446C280CAC110002E97B /* SignUpVC.swift */; };
 		9D9A4472280CC5170002E97B /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A4471280CC5170002E97B /* Feed.storyboard */; };
 		9D9A4476280CC7950002E97B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A4475280CC7950002E97B /* GoogleService-Info.plist */; };
+		9D9A447C280CD34B0002E97B /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A447B280CD34B0002E97B /* TabBarVC.swift */; };
+		9D9A447E280CD53B0002E97B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A447D280CD53B0002E97B /* ProfileVC.swift */; };
+		9D9A4480280CD5510002E97B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A447F280CD5510002E97B /* HomeVC.swift */; };
+		9D9A4482280CD5630002E97B /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4481280CD5630002E97B /* DiscoverVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,10 @@
 		9D9A446C280CAC110002E97B /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9D9A4471280CC5170002E97B /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		9D9A4475280CC7950002E97B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D9A447B280CD34B0002E97B /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		9D9A447D280CD53B0002E97B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		9D9A447F280CD5510002E97B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		9D9A4481280CD5630002E97B /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,10 @@
 		9D51BFFE2807AEA20056CBF5 /* Fitspo */ = {
 			isa = PBXGroup;
 			children = (
+				9D9A447A280CD3370002E97B /* Tab Bar */,
+				9D9A4479280CD3310002E97B /* Home */,
+				9D9A4478280CD3260002E97B /* Discover */,
+				9D9A4477280CD31F0002E97B /* Profile */,
 				9D9A4450280CA4AC0002E97B /* Support Files */,
 				9D9A444E280CA4940002E97B /* Models */,
 				9D9A444D280CA46C0002E97B /* Onboarding */,
@@ -208,6 +220,38 @@
 				9D51C0012807AEA20056CBF5 /* SceneDelegate.swift */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		9D9A4477280CD31F0002E97B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9D9A4478280CD3260002E97B /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		9D9A4479280CD3310002E97B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9D9A447A280CD3370002E97B /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				9D9A447B280CD34B0002E97B /* TabBarVC.swift */,
+				9D9A447D280CD53B0002E97B /* ProfileVC.swift */,
+				9D9A447F280CD5510002E97B /* HomeVC.swift */,
+				9D9A4481280CD5630002E97B /* DiscoverVC.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,10 +373,14 @@
 				9D9A446D280CAC110002E97B /* SignUpVC.swift in Sources */,
 				9D9A4456280CA7300002E97B /* UIViewController+HideKeyboard.swift in Sources */,
 				9D51C0022807AEA20056CBF5 /* SceneDelegate.swift in Sources */,
+				9D9A4482280CD5630002E97B /* DiscoverVC.swift in Sources */,
 				9D9A445A280CA7BA0002E97B /* HorizontalActionLabel.swift in Sources */,
+				9D9A447E280CD53B0002E97B /* ProfileVC.swift in Sources */,
 				9D9A4454280CA6DD0002E97B /* UIColor+Hex.swift in Sources */,
 				9D9A445E280CA8720002E97B /* AuthManager.swift in Sources */,
+				9D9A447C280CD34B0002E97B /* TabBarVC.swift in Sources */,
 				9D9A4460280CA8FD0002E97B /* User.swift in Sources */,
+				9D9A4480280CD5510002E97B /* HomeVC.swift in Sources */,
 				9D9A4468280CAAD80002E97B /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

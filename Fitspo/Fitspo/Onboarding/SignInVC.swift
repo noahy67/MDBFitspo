@@ -159,11 +159,14 @@ class SigninVC: UIViewController {
             switch result {
             case .success:
                 guard let window = self.view.window else { return }
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+//                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+//                window.rootViewController = vc
+//                let options: UIView.AnimationOptions = .transitionCrossDissolve
+//                let duration: TimeInterval = 0.3
+//                UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
+                let vc = TabBarVC()
                 window.rootViewController = vc
-                let options: UIView.AnimationOptions = .transitionCrossDissolve
-                let duration: TimeInterval = 0.3
-                UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
+                
                 
             case .failure(let error):
                 switch error {
