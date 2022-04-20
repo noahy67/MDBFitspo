@@ -23,7 +23,7 @@ extension UIColor {
     
     public static let fitOrange = UIColor(hex: "#f39237")!
     
-    public static let fitLavendar = UIColor(hex: "cfbff7")!
+    public static let fitLavendar = UIColor(hex: "#cfbff7")!
     
     public static let fitMystic = UIColor(hex: "#d65780")!
     

@@ -22,9 +22,9 @@ class SigninVC: UIViewController {
     
     private let titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Welcome,"
-        lbl.textColor = .primaryText
-        lbl.font = .systemFont(ofSize: 30, weight: .semibold)
+        lbl.text = "fitspo"
+        lbl.textColor = .fitOrange
+        lbl.font = .systemFont(ofSize: 50, weight: .bold)
         
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -32,9 +32,9 @@ class SigninVC: UIViewController {
     
     private let titleSecLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Sign in to continue"
-        lbl.textColor = .secondaryText
-        lbl.font = .systemFont(ofSize: 17, weight: .medium)
+        lbl.text = "Fashion inspired by you"
+        lbl.textColor = .fitBlue
+        lbl.font = .systemFont(ofSize: 17, weight: .heavy)
         
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -56,7 +56,7 @@ class SigninVC: UIViewController {
     
     private let signinButton: LoadingButton = {
         let btn = LoadingButton()
-        btn.layer.backgroundColor = UIColor.primary.cgColor
+        btn.layer.backgroundColor = UIColor.fitOrange.cgColor
         btn.setTitle("Sign In", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
@@ -75,7 +75,7 @@ class SigninVC: UIViewController {
         return actionLabel
     }()
     
-    private let contentEdgeInset = UIEdgeInsets(top: 120, left: 40, bottom: 30, right: 40)
+    private let contentEdgeInset = UIEdgeInsets(top: 80, left: 40, bottom: 30, right: 40)
     
     private let signinButtonHeight: CGFloat = 44.0
 
@@ -93,14 +93,14 @@ class SigninVC: UIViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
                                             constant: contentEdgeInset.top),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                constant: contentEdgeInset.left),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                 constant: contentEdgeInset.right),
+//            titleLabel.leadingAnchor.constraint(equalTo: view.,
+//                                                constant: contentEdgeInset.left),
+//            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+//                                                 constant: -contentEdgeInset.right),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleSecLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
-                                               constant: 3),
-            titleSecLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            titleSecLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
+                                               constant: 6),
+            titleSecLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         view.addSubview(stack)
@@ -113,7 +113,7 @@ class SigninVC: UIViewController {
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                             constant: -contentEdgeInset.right),
             stack.topAnchor.constraint(equalTo: titleSecLabel.bottomAnchor,
-                                       constant: 60)
+                                       constant: 100)
         ])
         
         view.addSubview(signinButton)
@@ -159,14 +159,11 @@ class SigninVC: UIViewController {
             switch result {
             case .success:
                 guard let window = self.view.window else { return }
-//                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-//                window.rootViewController = vc
-//                let options: UIView.AnimationOptions = .transitionCrossDissolve
-//                let duration: TimeInterval = 0.3
-//                UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
                 let vc = TabBarVC()
                 window.rootViewController = vc
-                
+                let options: UIView.AnimationOptions = .transitionCrossDissolve
+                let duration: TimeInterval = 0.3
+                UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
                 
             case .failure(let error):
                 switch error {

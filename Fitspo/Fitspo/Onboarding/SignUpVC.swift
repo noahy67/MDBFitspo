@@ -9,6 +9,7 @@ import UIKit
 import NotificationBannerSwift
 
 class SignUpVC: UIViewController {
+    
     private let stack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -22,7 +23,7 @@ class SignUpVC: UIViewController {
     private let titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "To Create Your Account,"
-        lbl.textColor = .primaryText
+        lbl.textColor = .fitOrange
         lbl.font = .systemFont(ofSize: 30, weight: .semibold)
         
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +77,7 @@ class SignUpVC: UIViewController {
     
     private let signupButton: LoadingButton = {
         let btn = LoadingButton()
-        btn.layer.backgroundColor = UIColor.primary.cgColor
+        btn.layer.backgroundColor = UIColor.fitOrange.cgColor
         btn.setTitle("Sign Up", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
@@ -86,6 +87,14 @@ class SignUpVC: UIViewController {
         return btn
     }()
     
+    private let haveAccountActionLabel: HorizontalActionLabel = {
+        let actionLabel = HorizontalActionLabel(
+            label: "Already have an account?",
+            buttonTitle: "Sign In")
+        
+        actionLabel.translatesAutoresizingMaskIntoConstraints = false
+        return actionLabel
+    }()
     
     private let contentEdgeInset = UIEdgeInsets(top: 30, left: 40, bottom: 30, right: 40)
     
@@ -132,6 +141,7 @@ class SignUpVC: UIViewController {
         ])
         
         view.addSubview(signupButton)
+        view.addSubview(haveAccountActionLabel)
         NSLayoutConstraint.activate([
             signupButton.leadingAnchor.constraint(equalTo: stack.leadingAnchor),
             signupButton.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 30),
@@ -139,10 +149,26 @@ class SignUpVC: UIViewController {
             signupButton.heightAnchor.constraint(equalToConstant: signupButtonHeight)
         ])
         
+        NSLayoutConstraint.activate([
+            haveAccountActionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            haveAccountActionLabel.topAnchor.constraint(equalTo: signupButton.bottomAnchor, constant: 50)
+            
+        ])
+        
         signupButton.layer.cornerRadius = signupButtonHeight / 2
         
         signupButton.addTarget(self, action: #selector(didTapSignUp(_:)), for: .touchUpInside)
 
+        haveAccountActionLabel.addTarget(self, action: #selector(didTapHaveAccount(_:)), for: .touchUpInside)
+    }
+
+    @objc private func didTapHaveAccount(_ sender: UIButton) {
+        guard let window = self.view.window else { return }
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        window.rootViewController = vc
+        let options: UIView.AnimationOptions = .transitionCrossDissolve
+        let duration: TimeInterval = 0.3
+        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
     }
 
     @objc private func didTapSignUp(_ sender: UIButton) {
@@ -173,6 +199,7 @@ class SignUpVC: UIViewController {
         
         if password != passwordC {
             showErrorBanner(withTitle: "Passwords do not match", subtitle: "Please confirm the same password")
+            return
         }
         
         signupButton.showLoading()
@@ -185,7 +212,7 @@ class SignUpVC: UIViewController {
             switch result {
             case .success:
                 guard let window = self.view.window else { return }
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                let vc = TabBarVC()
                 window.rootViewController = vc
                 let options: UIView.AnimationOptions = .transitionCrossDissolve
                 let duration: TimeInterval = 0.3

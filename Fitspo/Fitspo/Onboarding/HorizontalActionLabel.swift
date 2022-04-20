@@ -19,7 +19,7 @@ class HorizontalActionLabel: UIStackView {
     
     let button: UIButton = {
         let btn = UIButton()
-        btn.setTitleColor(.primary, for: .normal)
+        btn.setTitleColor(.fitBlue, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
         
         return btn

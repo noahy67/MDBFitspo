@@ -37,6 +37,8 @@ class AuthManager {
     
     var currentUser: User?
     
+    var userInfo: User?
+    
     private var userListener: ListenerRegistration?
     
     init() {
@@ -99,7 +101,7 @@ class AuthManager {
                 return
             }
             
-            let input: User = User(uid: authResult.user.uid, username: username, email: email, fullname: name, userBio: "", photoURL: "", allPosts: [], friends: [], savedPosts: [], userWardrobe: [])
+            let input: User = User(uid: authResult.user.uid, username: username, email: email, fullname: name, userBio: "", photoURL: "gs://fitspo-a9673.appspot.com/profilePics/no-profile-image.png", allPosts: [], friends: [], savedPosts: [], userWardrobe: [])
             DatabaseRequest.shared.setUser(input) { () }
             self?.linkUser2(withuid: authResult.user.uid, completion: completion)
         }
@@ -164,6 +166,43 @@ class AuthManager {
         userListener?.remove()
         currentUser = nil
     }
+    
+//    func getUserData()->User {
+//        let uid = auth.currentUser?.uid
+//        userInfo = User(uid: uid, username: "dddd", email: "", fullname: "", userBio: "", photoURL: "", allPosts: [], friends: [], savedPosts: [], userWardrobe: [])
+//
+//        userListener = db.collection("users").addSnapshotListener {
+//            docSnapshot, error in
+//            guard let documents = docSnapshot?.documents else { return }
+//
+////            for document in documents {
+////                guard let userDum = try? document.data(as: User.self) else { return }
+////                if userDum.uid == uid {
+////                    self.userInfo?.username = "testing"
+////                }
+////            }
+//
+//
+//            self.userInfo?.username = "testing"
+//
+//
+////            user.username = document.value(forKey: "username") as! String
+////            if let dictionary = document.data() {
+////                user.username = dictionary["username"] as! String
+////                user.email = dictionary["email"] as! String
+////                user.fullname = dictionary["fullname"] as! String
+////                user.userBio = dictionary["userBio"] as! String
+////                user.email = dictionary["email"] as! String
+////                user.photoURL = dictionary["photoURL"] as! String
+//
+//
+////            }
+//
+//
+//
+//        }
+//        return userInfo!
+//    }
 }
 
 

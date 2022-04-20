@@ -26,6 +26,7 @@ class DatabaseRequest {
         }
     }
     
+    
 //    func setEvent(_ event: Event, completion: (()->Void)?) {
 //        guard let id = event.id else { return }
 //
@@ -34,4 +35,23 @@ class DatabaseRequest {
 //            completion?()
 //        } catch { }
 //    }
+    
+//    func getEvents(vc: ProfileVC)->[Event] {
+//        var events: [Event] = []
+//        if (AuthManager.shared.isSignedIn()) {
+//            userListener = db.collection("events").order(by: "startTimeStamp", descending: true)
+//                .addSnapshotListener { querySnapshot, error in
+//                events = []
+//                guard let documents = querySnapshot?.documents else { return }
+//                for document in documents {
+//                    guard let event = try? document.data(as: Event.self) else { return }
+//                    events.append(event)
+//                }
+//                vc.reloadEvents(new: events)
+//            }
+//        }
+//        return events
+//    }
+    
+
 }

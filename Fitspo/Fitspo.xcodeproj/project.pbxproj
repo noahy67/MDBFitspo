@@ -61,6 +61,8 @@
 		9D9A447E280CD53B0002E97B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A447D280CD53B0002E97B /* ProfileVC.swift */; };
 		9D9A4480280CD5510002E97B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A447F280CD5510002E97B /* HomeVC.swift */; };
 		9D9A4482280CD5630002E97B /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A4481280CD5630002E97B /* DiscoverVC.swift */; };
+		9DF95F10280E7FDE007967C0 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF95F0F280E7FDE007967C0 /* EditProfileVC.swift */; };
+		9DF95F12281000E2007967C0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF95F11281000E2007967C0 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		9D9A447D280CD53B0002E97B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		9D9A447F280CD5510002E97B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9D9A4481280CD5630002E97B /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
+		9DF95F0F280E7FDE007967C0 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		9DF95F11281000E2007967C0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,7 @@
 				9D9A4461280CA95A0002E97B /* DatabaseRequest.swift */,
 				9D9A4463280CAA1D0002E97B /* Post.swift */,
 				9D9A4465280CAA420002E97B /* WardrobeItem.swift */,
+				9DF95F11281000E2007967C0 /* StorageManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +230,8 @@
 		9D9A4477280CD31F0002E97B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9D9A447D280CD53B0002E97B /* ProfileVC.swift */,
+				9DF95F0F280E7FDE007967C0 /* EditProfileVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -232,6 +239,7 @@
 		9D9A4478280CD3260002E97B /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				9D9A4481280CD5630002E97B /* DiscoverVC.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 		9D9A4479280CD3310002E97B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9D9A447F280CD5510002E97B /* HomeVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -247,9 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				9D9A447B280CD34B0002E97B /* TabBarVC.swift */,
-				9D9A447D280CD53B0002E97B /* ProfileVC.swift */,
-				9D9A447F280CD5510002E97B /* HomeVC.swift */,
-				9D9A4481280CD5630002E97B /* DiscoverVC.swift */,
 			);
 			path = "Tab Bar";
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 				9D9A445C280CA7F20002E97B /* LoadingButton.swift in Sources */,
 				9D9A4452280CA60A0002E97B /* UIColor+ColorScheme.swift in Sources */,
 				9D9A4462280CA95A0002E97B /* DatabaseRequest.swift in Sources */,
+				9DF95F10280E7FDE007967C0 /* EditProfileVC.swift in Sources */,
 				9D51C0042807AEA20056CBF5 /* ViewController.swift in Sources */,
 				9D9A4464280CAA1D0002E97B /* Post.swift in Sources */,
 				9D9A4458280CA7860002E97B /* AuthTextField.swift in Sources */,
@@ -374,6 +381,7 @@
 				9D9A4456280CA7300002E97B /* UIViewController+HideKeyboard.swift in Sources */,
 				9D51C0022807AEA20056CBF5 /* SceneDelegate.swift in Sources */,
 				9D9A4482280CD5630002E97B /* DiscoverVC.swift in Sources */,
+				9DF95F12281000E2007967C0 /* StorageManager.swift in Sources */,
 				9D9A445A280CA7BA0002E97B /* HorizontalActionLabel.swift in Sources */,
 				9D9A447E280CD53B0002E97B /* ProfileVC.swift in Sources */,
 				9D9A4454280CA6DD0002E97B /* UIColor+Hex.swift in Sources */,
@@ -530,6 +538,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RN8B654VBR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fitspo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -557,6 +566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RN8B654VBR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fitspo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
