@@ -12,6 +12,8 @@ import SwiftUI
 
 class ProfileVC: UIViewController {
     
+    static let shared = ProfileVC()
+    
     let storage = Storage.storage()
     let tempImage: UIImage = UIImage(named: "no-profile-image")!
     
@@ -88,6 +90,11 @@ class ProfileVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateProfile()
+    }
+    
+    
     private func profileLabelConstraints() {
         view.addSubview(usernameLabel)
         view.addSubview(userBioLabel)
@@ -153,24 +160,20 @@ class ProfileVC: UIViewController {
     }
     
     func updateProfile() {
-        let userInfo = AuthManager.shared.currentUser
-        usernameLabel.text = userInfo?.username
-        if userInfo?.userBio != "" {
-            userBioLabel.text = userInfo?.userBio
+        guard let userInfo = AuthManager.shared.currentUser else { return }
+        usernameLabel.text = userInfo.username
+        if userInfo.userBio != "" {
+            userBioLabel.text = userInfo.userBio
         }
-        followersLabel.text = "followers: \(userInfo?.friends.count ?? 0)"
+        followersLabel.text = "followers: \(userInfo.friends.count)"
         
-        if userInfo?.photoURL != "" {
-            let imageRef: StorageReference = storage.reference(forURL: userInfo!.photoURL)
-            imageRef.getData(maxSize: 1000 * 1000) { data, error in
-                if let error = error {
-                    print("Error: \(error)")
-                } else {
-                    self.profilePhotoTest.image = UIImage(data: data!)
-                }
+        let imageRef: StorageReference = storage.reference(forURL: userInfo.photoURL)
+        imageRef.getData(maxSize: 1000 * 1000) { data, error in
+            if let error = error {
+                print("Error: \(error)")
+            } else {
+                self.profilePhotoTest.image = UIImage(data: data!)
             }
-        } else {
-            profilePhotoTest.image = tempImage
         }
         
     }

@@ -15,7 +15,9 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     let storage = Storage.storage()
     
-    var tempImage: UIImage = UIImage(named: "no-profile-image")!
+    var tempImage: UIImage? = nil
+    
+    var didTakePicture: Bool = false
     
     private let backButton: UIButton = {
         let btn = UIButton()
@@ -98,7 +100,6 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         buttonConstraints()
         stackConstraints()
         view.addSubview(profilePhotoTest)
-        profilePhotoTest.image = tempImage
         NSLayoutConstraint.activate([
             profilePhotoTest.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 50),
             profilePhotoTest.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: -50),
@@ -148,79 +149,23 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     
     @objc private func didTapDone(_ sender: UIButton) {
+        
         guard let newUsername = usernameTextField.text else { return }
         guard let newBio = userBioTextField.text else { return }
         
-//        let imageRef: StorageReference = storage.reference(forURL: "picture url")
-//        imageRef.getData(maxSize: 1000 * 1000) { data, error in
-//            if let error = error {
-//                print("Error: \(error)")
-//            } else {
-//                self.profilePhotoTest.image = UIImage(data: data!)
-//            }
-//        }
-//        // convert photo to a data type to be saved in firebase storage
-//        guard let photoData = profilePhotoTest.image?.jpegData(compressionQuality: 0.5) else {
-//            print("error couldn't convert photo")
-//            return
-//        }
-//        // create metadata so we can see images in the firebase storage console
-//        let uploadMetaData = StorageMetadata()
-//        uploadMetaData.contentType = "image/jpeg"
-//        
-//        // create filename if necessary
-//        guard let documentID = AuthManager.shared.currentUser?.uid else { return }
-//        
-//        let storageRef = storage.reference().child(documentID)
-//        
-//        let uploadTask = storageRef.putData(photoData, metadata: uploadMetaData) { metadata, error in
-//            if let error = error {
-//                print("upload to ref failed")
-//            }
-//        }
-//        
-//        uploadTask.observe(.success) { snapshot in
-//            print("upload successful")
-//            
-//            
-//            
-//        }
-//        uploadTask.observe(.failure) { snapshot in
-//            if let error = snapshot.error {
-//                print("error upload failed")
-//            }
-//            
-//        }
-        if tempImage != UIImage(named: "no-profile-image") {
-            let storageRef = storage.reference()
+        if didTakePicture == true && tempImage != nil {
+            
             guard let emailaddress = AuthManager.shared.currentUser?.email else { return }
-            let profilePicRef = storageRef.child("profilePics/\(emailaddress).jpg")
             
-            let metadata = StorageMetadata()
-            metadata.contentType = "image/jpeg"
+            guard let tempy = tempImage else { return }
             
-            guard let photoData = tempImage.jpegData(compressionQuality: 0.5) else {
-                print("error couldn't convert photo")
-                return
-            }
-            
-            let uploadTask = profilePicRef.putData(photoData, metadata: metadata) { metadata, error in
-                guard let metadata = metadata else {
-                    print("COULD NOT UPLOAD")
-                    return
-                }
-            }
-    
-            uploadTask.observe(.success) { snapshot in
-                profilePicRef.downloadURL { url, error in
-                    if let error = error {
-                        print("COULD NOT DOWNLOAD URL")
-                        return
-                    } else {
-                        let downURL = url
-                        let strURL = downURL?.absoluteString
-                        AuthManager.shared.currentUser?.photoURL = strURL!
-                    }
+            StorageManager.shared.uploadProfilePicture(with: tempy, fileName: emailaddress) { result in
+                switch result {
+                case .success(let downloadURL):
+                    AuthManager.shared.currentUser?.photoURL = downloadURL
+                
+                case .failure(let error):
+                    print("Storage Manager Error \(error)")
                 }
             }
             
@@ -232,8 +177,11 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         if newBio != "" {
             AuthManager.shared.currentUser?.userBio = newBio
         }
+        
         guard let newUserInfo = AuthManager.shared.currentUser else { return }
         DatabaseRequest.shared.setUser(newUserInfo) { () }
+        
+        ProfileVC.shared.updateProfile()
         
         guard let window = self.view.window else { return }
         let vc = TabBarVC()
@@ -260,6 +208,8 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         profilePhotoTest.contentMode = .scaleAspectFit
         profilePhotoTest.image = image
         tempImage = image
+        didTakePicture = true
+        
         
         picker.dismiss(animated: true) { () }
     }
