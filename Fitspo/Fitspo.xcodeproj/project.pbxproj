@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D38B932281391E300B3ED90 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B931281391E300B3ED90 /* CreatePostVC.swift */; };
+		9D38B9342813D57E00B3ED90 /* ProfilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B9332813D57E00B3ED90 /* ProfilePostCell.swift */; };
+		9D38B9362813DB8800B3ED90 /* ProfilePostPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B9352813DB8800B3ED90 /* ProfilePostPreviewVC.swift */; };
 		9D51C0002807AEA20056CBF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51BFFF2807AEA20056CBF5 /* AppDelegate.swift */; };
 		9D51C0022807AEA20056CBF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51C0012807AEA20056CBF5 /* SceneDelegate.swift */; };
 		9D51C0042807AEA20056CBF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51C0032807AEA20056CBF5 /* ViewController.swift */; };
@@ -66,6 +69,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D38B931281391E300B3ED90 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
+		9D38B9332813D57E00B3ED90 /* ProfilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostCell.swift; sourceTree = "<group>"; };
+		9D38B9352813DB8800B3ED90 /* ProfilePostPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostPreviewVC.swift; sourceTree = "<group>"; };
 		9D51BFFC2807AEA20056CBF5 /* Fitspo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitspo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D51BFFF2807AEA20056CBF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D51C0012807AEA20056CBF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +238,9 @@
 			children = (
 				9D9A447D280CD53B0002E97B /* ProfileVC.swift */,
 				9DF95F0F280E7FDE007967C0 /* EditProfileVC.swift */,
+				9D38B931281391E300B3ED90 /* CreatePostVC.swift */,
+				9D38B9332813D57E00B3ED90 /* ProfilePostCell.swift */,
+				9D38B9352813DB8800B3ED90 /* ProfilePostPreviewVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -375,6 +384,8 @@
 				9DF95F10280E7FDE007967C0 /* EditProfileVC.swift in Sources */,
 				9D51C0042807AEA20056CBF5 /* ViewController.swift in Sources */,
 				9D9A4464280CAA1D0002E97B /* Post.swift in Sources */,
+				9D38B9362813DB8800B3ED90 /* ProfilePostPreviewVC.swift in Sources */,
+				9D38B9342813D57E00B3ED90 /* ProfilePostCell.swift in Sources */,
 				9D9A4458280CA7860002E97B /* AuthTextField.swift in Sources */,
 				9D51C0002807AEA20056CBF5 /* AppDelegate.swift in Sources */,
 				9D9A446D280CAC110002E97B /* SignUpVC.swift in Sources */,
@@ -385,6 +396,7 @@
 				9D9A445A280CA7BA0002E97B /* HorizontalActionLabel.swift in Sources */,
 				9D9A447E280CD53B0002E97B /* ProfileVC.swift in Sources */,
 				9D9A4454280CA6DD0002E97B /* UIColor+Hex.swift in Sources */,
+				9D38B932281391E300B3ED90 /* CreatePostVC.swift in Sources */,
 				9D9A445E280CA8720002E97B /* AuthManager.swift in Sources */,
 				9D9A447C280CD34B0002E97B /* TabBarVC.swift in Sources */,
 				9D9A4460280CA8FD0002E97B /* User.swift in Sources */,

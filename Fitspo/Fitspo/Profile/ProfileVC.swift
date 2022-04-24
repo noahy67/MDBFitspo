@@ -41,6 +41,18 @@ class ProfileVC: UIViewController {
         return btn
     }()
     
+    private let createPostButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle(" Create A Post ", for: .normal)
+        btn.setTitleColor(.fitOrange, for: .normal)
+        btn.backgroundColor = .clear
+        btn.layer.cornerRadius = 10
+        btn.layer.shadowRadius = 10
+        btn.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
     private let usernameLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "username"
@@ -128,6 +140,7 @@ class ProfileVC: UIViewController {
     private func buttonConstraints() {
         view.addSubview(signOutButton)
         view.addSubview(editProfileButton)
+        view.addSubview(createPostButton)
         NSLayoutConstraint.activate([
             signOutButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             signOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
@@ -140,6 +153,13 @@ class ProfileVC: UIViewController {
             ])
         
         editProfileButton.addTarget(self, action: #selector(didTapEditProfile(_:)), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            createPostButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            createPostButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
+            ])
+        
+        createPostButton.addTarget(self, action: #selector(didTapCreatePost(_:)), for: .touchUpInside)
     }
     
     @objc func didTapSignOut(_ sender: UIButton) {
@@ -159,6 +179,12 @@ class ProfileVC: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    @objc func didTapCreatePost(_ sneder: UIButton) {
+        let vc = CreatePostVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
     func updateProfile() {
         guard let userInfo = AuthManager.shared.currentUser else { return }
         usernameLabel.text = userInfo.username
@@ -167,14 +193,18 @@ class ProfileVC: UIViewController {
         }
         followersLabel.text = "followers: \(userInfo.friends.count)"
         
-        let imageRef: StorageReference = storage.reference(forURL: userInfo.photoURL)
-        imageRef.getData(maxSize: 1000 * 1000) { data, error in
-            if let error = error {
-                print("Error: \(error)")
-            } else {
-                self.profilePhotoTest.image = UIImage(data: data!)
+        let uPhotoURL = userInfo.photoURL
+        
+        StorageManager.shared.getPicture(photoURL: uPhotoURL) { result in
+            switch result {
+            case .success(let photoImage):
+                self.profilePhotoTest.image = photoImage
+                
+            case .failure(let error):
+                print("Storage Manager error \(error)")
             }
         }
+        
         
     }
     

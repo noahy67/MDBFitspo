@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 typealias PostID = String
 
 struct Post: Codable {
-    @DocumentID var uid: PostID? = UUID().uuidString
+    @DocumentID var id: PostID? = UUID().uuidString
     
     var username: String
     
@@ -26,7 +26,7 @@ struct Post: Codable {
     
     var location: String
     
-    var photos: [String]
+    var photos: String
     
     var postTimeStamp: Timestamp
     

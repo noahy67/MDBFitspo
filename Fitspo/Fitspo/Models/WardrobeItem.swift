@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 typealias WardrobeItemID = String
 
 struct WardrobeItem: Codable {
-    @DocumentID var uid: WardrobeItemID? = UUID().uuidString
+    @DocumentID var id: WardrobeItemID? = UUID().uuidString
     
     var color: String
     
