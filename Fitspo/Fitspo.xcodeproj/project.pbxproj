@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55969E83281682D70030B938 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E82281682D70030B938 /* Bundle-Decodable.swift */; };
+		55969E85281683050030B938 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E84281683050030B938 /* SectionHeader.swift */; };
+		55969E872816830F0030B938 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E862816830F0030B938 /* App.swift */; };
+		55969E892816831B0030B938 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E882816831B0030B938 /* FeaturedCell.swift */; };
+		55969E8B281683240030B938 /* MediumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E8A281683240030B938 /* MediumTableCell.swift */; };
+		55969E8D281683290030B938 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E8C281683290030B938 /* Section.swift */; };
+		55969E8F281683300030B938 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E8E281683300030B938 /* SelfConfiguringCell.swift */; };
+		55969E91281683380030B938 /* SmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E90281683380030B938 /* SmallTableCell.swift */; };
+		55969E93281684010030B938 /* discovercontents.json in Resources */ = {isa = PBXBuildFile; fileRef = 55969E92281684010030B938 /* discovercontents.json */; };
 		9D38B932281391E300B3ED90 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B931281391E300B3ED90 /* CreatePostVC.swift */; };
 		9D38B9342813D57E00B3ED90 /* ProfilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B9332813D57E00B3ED90 /* ProfilePostCell.swift */; };
 		9D38B9362813DB8800B3ED90 /* ProfilePostPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B9352813DB8800B3ED90 /* ProfilePostPreviewVC.swift */; };
@@ -69,6 +78,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55969E82281682D70030B938 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		55969E84281683050030B938 /* SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		55969E862816830F0030B938 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		55969E882816831B0030B938 /* FeaturedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
+		55969E8A281683240030B938 /* MediumTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumTableCell.swift; sourceTree = "<group>"; };
+		55969E8C281683290030B938 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		55969E8E281683300030B938 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		55969E90281683380030B938 /* SmallTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallTableCell.swift; sourceTree = "<group>"; };
+		55969E92281684010030B938 /* discovercontents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = discovercontents.json; path = ../../../../../Downloads/discovercontents.json; sourceTree = "<group>"; };
 		9D38B931281391E300B3ED90 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		9D38B9332813D57E00B3ED90 /* ProfilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostCell.swift; sourceTree = "<group>"; };
 		9D38B9352813DB8800B3ED90 /* ProfilePostPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostPreviewVC.swift; sourceTree = "<group>"; };
@@ -215,9 +233,12 @@
 			isa = PBXGroup;
 			children = (
 				9D9A445D280CA8720002E97B /* AuthManager.swift */,
-				9D9A445F280CA8FD0002E97B /* User.swift */,
 				9D9A4461280CA95A0002E97B /* DatabaseRequest.swift */,
+				9D9A445F280CA8FD0002E97B /* User.swift */,
 				9D9A4463280CAA1D0002E97B /* Post.swift */,
+				55969E862816830F0030B938 /* App.swift */,
+				55969E8C281683290030B938 /* Section.swift */,
+				55969E84281683050030B938 /* SectionHeader.swift */,
 				9D9A4465280CAA420002E97B /* WardrobeItem.swift */,
 				9DF95F11281000E2007967C0 /* StorageManager.swift */,
 			);
@@ -227,6 +248,8 @@
 		9D9A4450280CA4AC0002E97B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				55969E82281682D70030B938 /* Bundle-Decodable.swift */,
+				55969E92281684010030B938 /* discovercontents.json */,
 				9D51BFFF2807AEA20056CBF5 /* AppDelegate.swift */,
 				9D51C0012807AEA20056CBF5 /* SceneDelegate.swift */,
 			);
@@ -249,6 +272,10 @@
 			isa = PBXGroup;
 			children = (
 				9D9A4481280CD5630002E97B /* DiscoverVC.swift */,
+				55969E882816831B0030B938 /* FeaturedCell.swift */,
+				55969E8A281683240030B938 /* MediumTableCell.swift */,
+				55969E90281683380030B938 /* SmallTableCell.swift */,
+				55969E8E281683300030B938 /* SelfConfiguringCell.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -364,6 +391,7 @@
 			files = (
 				9D9A4472280CC5170002E97B /* Feed.storyboard in Resources */,
 				9D51C00C2807AEA30056CBF5 /* LaunchScreen.storyboard in Resources */,
+				55969E93281684010030B938 /* discovercontents.json in Resources */,
 				9D9A4476280CC7950002E97B /* GoogleService-Info.plist in Resources */,
 				9D51C0092807AEA30056CBF5 /* Assets.xcassets in Resources */,
 				9D51C0072807AEA20056CBF5 /* Main.storyboard in Resources */,
@@ -382,24 +410,32 @@
 				9D9A4452280CA60A0002E97B /* UIColor+ColorScheme.swift in Sources */,
 				9D9A4462280CA95A0002E97B /* DatabaseRequest.swift in Sources */,
 				9DF95F10280E7FDE007967C0 /* EditProfileVC.swift in Sources */,
+				55969E872816830F0030B938 /* App.swift in Sources */,
+				55969E85281683050030B938 /* SectionHeader.swift in Sources */,
 				9D51C0042807AEA20056CBF5 /* ViewController.swift in Sources */,
 				9D9A4464280CAA1D0002E97B /* Post.swift in Sources */,
+				55969E8D281683290030B938 /* Section.swift in Sources */,
 				9D38B9362813DB8800B3ED90 /* ProfilePostPreviewVC.swift in Sources */,
 				9D38B9342813D57E00B3ED90 /* ProfilePostCell.swift in Sources */,
 				9D9A4458280CA7860002E97B /* AuthTextField.swift in Sources */,
 				9D51C0002807AEA20056CBF5 /* AppDelegate.swift in Sources */,
+				55969E892816831B0030B938 /* FeaturedCell.swift in Sources */,
 				9D9A446D280CAC110002E97B /* SignUpVC.swift in Sources */,
 				9D9A4456280CA7300002E97B /* UIViewController+HideKeyboard.swift in Sources */,
 				9D51C0022807AEA20056CBF5 /* SceneDelegate.swift in Sources */,
 				9D9A4482280CD5630002E97B /* DiscoverVC.swift in Sources */,
 				9DF95F12281000E2007967C0 /* StorageManager.swift in Sources */,
 				9D9A445A280CA7BA0002E97B /* HorizontalActionLabel.swift in Sources */,
+				55969E83281682D70030B938 /* Bundle-Decodable.swift in Sources */,
 				9D9A447E280CD53B0002E97B /* ProfileVC.swift in Sources */,
 				9D9A4454280CA6DD0002E97B /* UIColor+Hex.swift in Sources */,
 				9D38B932281391E300B3ED90 /* CreatePostVC.swift in Sources */,
+				55969E8F281683300030B938 /* SelfConfiguringCell.swift in Sources */,
 				9D9A445E280CA8720002E97B /* AuthManager.swift in Sources */,
 				9D9A447C280CD34B0002E97B /* TabBarVC.swift in Sources */,
 				9D9A4460280CA8FD0002E97B /* User.swift in Sources */,
+				55969E91281683380030B938 /* SmallTableCell.swift in Sources */,
+				55969E8B281683240030B938 /* MediumTableCell.swift in Sources */,
 				9D9A4480280CD5510002E97B /* HomeVC.swift in Sources */,
 				9D9A4468280CAAD80002E97B /* SignInVC.swift in Sources */,
 			);
