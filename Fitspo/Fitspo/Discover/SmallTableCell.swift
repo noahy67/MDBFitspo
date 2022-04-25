@@ -16,6 +16,7 @@ class SmallTableCell: UICollectionViewCell, SelfConfiguringCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        //change font here
         name.font = UIFont.preferredFont(forTextStyle: .title2)
         name.textColor = .label
 
@@ -41,6 +42,6 @@ class SmallTableCell: UICollectionViewCell, SelfConfiguringCell {
     }
 
     required init?(coder: NSCoder) {
-        fatalError("How many times do I have to tell you? THIS. ISN'T. SUPPORTED.")
+        fatalError("No")
     }
 }

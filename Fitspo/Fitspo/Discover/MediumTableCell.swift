@@ -18,9 +18,11 @@ class MediumTableCell: UICollectionViewCell, SelfConfiguringCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        //change font here
         name.font = UIFont.preferredFont(forTextStyle: .headline)
         name.textColor = .label
 
+        //change font here
         subtitle.font = UIFont.preferredFont(forTextStyle: .subheadline)
         subtitle.textColor = .secondaryLabel
 

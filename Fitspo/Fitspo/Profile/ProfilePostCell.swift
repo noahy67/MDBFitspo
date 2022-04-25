@@ -14,9 +14,6 @@ class ProfilePostCell: UICollectionViewCell {
     var symbol: Post? {
         didSet {
             
-            
-            
-            
         }
     }
     
