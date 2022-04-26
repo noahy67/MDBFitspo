@@ -37,6 +37,7 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         btn.layer.cornerRadius = 10
         btn.isUserInteractionEnabled = true
         
+        
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -105,6 +106,13 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         ])
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        doneButton.isUserInteractionEnabled = true
+        doneButton.hideLoading()
+        presentingViewController?.viewWillAppear(true)
+    }
+    
     private func buttonConstraints() {
         view.addSubview(backButton)
         view.addSubview(doneButton)
@@ -147,6 +155,9 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     @objc private func didTapDone(_ sender: UIButton) {
         
+        doneButton.showLoading()
+        sender.isUserInteractionEnabled = false
+        
         if didTakePicture == false {
             self.showErrorBanner(withTitle: "No Picture Added", subtitle: "Cannot create a post without a picture, please select one or click the back button")
             return
@@ -180,6 +191,7 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                 case .success(let downloadURL):
                     newPost.photos = downloadURL
                     print(downloadURL)
+                   
                     DatabaseRequest.shared.setPost(newPost) { (self.dismiss(animated: true, completion: nil)) }
                 case .failure(let error):
                     print("Storage Manager Error \(error)")
@@ -187,6 +199,7 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             }
             
         } else {
+        
             DatabaseRequest.shared.setPost(newPost) { (self.dismiss(animated: true, completion: nil)) }
         }
         
@@ -206,8 +219,39 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
     
     @objc private func didTapPhotoButton(_ sender: UIButton) {
+        presentPhotoActionSheet()
+    }
+    
+    func presentPhotoActionSheet() {
+        let actionSheet = UIAlertController(title: "Profile Picture",
+                                            message: "How would you like to select a picture?",
+                                            preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Take Photo", style: .default,
+                                            handler: { [weak self] _ in
+            self?.presentCamera()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo", style: .default,
+                                            handler: { [weak self] _ in
+            
+            self?.presentPhotoPicker()
+        }))
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func presentCamera() {
         let vc = UIImagePickerController()
         vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
+    }
+    
+    func presentPhotoPicker() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
         vc.allowsEditing = true
         vc.delegate = self
         present(vc, animated: true)
@@ -226,6 +270,12 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         picker.dismiss(animated: true) { () }
     }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     private func showErrorBanner(withTitle title: String, subtitle: String? = nil) {
         showBanner(withStyle: .warning, title: title, subtitle: subtitle)

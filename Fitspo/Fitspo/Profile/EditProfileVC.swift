@@ -110,6 +110,8 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        doneButton.isUserInteractionEnabled = true
+        doneButton.hideLoading()
         presentingViewController?.viewWillAppear(true)
     }
     
@@ -155,6 +157,9 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     @objc private func didTapDone(_ sender: UIButton) {
         
+        doneButton.showLoading()
+        sender.isUserInteractionEnabled = false
+        
         guard let newUsername = usernameTextField.text else { return }
         guard let newBio = userBioTextField.text else { return }
         
@@ -177,6 +182,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
                     AuthManager.shared.currentUser?.photoURL = downloadURL
                     guard let newUserInfo = AuthManager.shared.currentUser else { return }
                     DatabaseRequest.shared.setUser(newUserInfo) {
+                        
                         self.dismiss(animated: true, completion: nil)
                     }
                 
@@ -188,6 +194,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         } else {
             guard let newUserInfo = AuthManager.shared.currentUser else { return }
             DatabaseRequest.shared.setUser(newUserInfo) {
+        
                 self.dismiss(animated: true, completion: nil)
             }
         }
@@ -203,8 +210,39 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     
     @objc private func didTapPhotoButton(_ sender: UIButton) {
+        presentPhotoActionSheet()
+    }
+    
+    func presentPhotoActionSheet() {
+        let actionSheet = UIAlertController(title: "Profile Picture",
+                                            message: "How would you like to select a picture?",
+                                            preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Take Photo", style: .default,
+                                            handler: { [weak self] _ in
+            self?.presentCamera()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo", style: .default,
+                                            handler: { [weak self] _ in
+            
+            self?.presentPhotoPicker()
+        }))
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func presentCamera() {
         let vc = UIImagePickerController()
         vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
+    }
+    
+    func presentPhotoPicker() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
         vc.allowsEditing = true
         vc.delegate = self
         present(vc, animated: true)
@@ -223,6 +261,12 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         picker.dismiss(animated: true) { () }
     }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     private func showErrorBanner(withTitle title: String, subtitle: String? = nil) {
         showBanner(withStyle: .warning, title: title, subtitle: subtitle)
@@ -245,3 +289,5 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
     }
 }
+
+

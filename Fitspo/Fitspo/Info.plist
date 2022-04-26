@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Please allow Fitspo access to take profile picture</string>
+	<string>Please allow Fitspo access to take picture</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow Fitspo access to select from photo library</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
