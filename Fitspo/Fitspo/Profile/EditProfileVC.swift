@@ -96,7 +96,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         buttonConstraints()
         stackConstraints()
         view.addSubview(profilePhotoTest)
@@ -106,6 +106,11 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
             profilePhotoTest.trailingAnchor.constraint(equalTo: profilePhotoTest.leadingAnchor, constant: 100),
             profilePhotoTest.bottomAnchor.constraint(equalTo: profilePhotoTest.topAnchor, constant: 100)
         ])
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presentingViewController?.viewWillAppear(true)
     }
     
     private func buttonConstraints() {
@@ -153,6 +158,13 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         guard let newUsername = usernameTextField.text else { return }
         guard let newBio = userBioTextField.text else { return }
         
+        if newUsername != "" {
+            AuthManager.shared.currentUser?.username = newUsername
+        }
+        if newBio != "" {
+            AuthManager.shared.currentUser?.userBio = newBio
+        }
+        
         if didTakePicture == true && tempImage != nil {
             
             guard let emailaddress = AuthManager.shared.currentUser?.email else { return }
@@ -163,32 +175,30 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
                 switch result {
                 case .success(let downloadURL):
                     AuthManager.shared.currentUser?.photoURL = downloadURL
+                    guard let newUserInfo = AuthManager.shared.currentUser else { return }
+                    DatabaseRequest.shared.setUser(newUserInfo) {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 
                 case .failure(let error):
                     print("Storage Manager Error \(error)")
                 }
             }
             
-        }
-       
-        if newUsername != "" {
-            AuthManager.shared.currentUser?.username = newUsername
-        }
-        if newBio != "" {
-            AuthManager.shared.currentUser?.userBio = newBio
+        } else {
+            guard let newUserInfo = AuthManager.shared.currentUser else { return }
+            DatabaseRequest.shared.setUser(newUserInfo) {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
         
-        guard let newUserInfo = AuthManager.shared.currentUser else { return }
-        DatabaseRequest.shared.setUser(newUserInfo) { () }
         
-        ProfileVC.shared.updateProfile()
-        
-        guard let window = self.view.window else { return }
-        let vc = TabBarVC()
-        window.rootViewController = vc
-        let options: UIView.AnimationOptions = .transitionCrossDissolve
-        let duration: TimeInterval = 0.3
-        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
+//        guard let window = self.view.window else { return }
+//        let vc = TabBarVC()
+//        window.rootViewController = vc
+//        let options: UIView.AnimationOptions = .transitionCrossDissolve
+//        let duration: TimeInterval = 0.3
+//        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
         
     }
     

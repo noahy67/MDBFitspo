@@ -43,7 +43,7 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     private let photoButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(" Take Profile Pic ", for: .normal)
+        btn.setTitle(" Take Post Pic ", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .fitOrange
         btn.layer.cornerRadius = 10
@@ -93,7 +93,7 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         buttonConstraints()
         stackConstraints()
         view.addSubview(profilePhotoTest)
@@ -147,6 +147,11 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     @objc private func didTapDone(_ sender: UIButton) {
         
+        if didTakePicture == false {
+            self.showErrorBanner(withTitle: "No Picture Added", subtitle: "Cannot create a post without a picture, please select one or click the back button")
+            return
+        }
+        
         guard let newCaption = captionTextField.text else { return }
         guard let newLocation = locationTextField.text else { return }
         
@@ -157,23 +162,7 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         let newT: Timestamp = Timestamp.init()
         
-        var newPost: Post = Post(id: idd, username: dude.username, caption: "", comments: [:], creator: dudeID, likedUsers: [], location: "", photos: "", postTimeStamp: newT, wardrobeItems: [])
-        
-        if didTakePicture == true && tempImage != nil {
-            
-            guard let tempy = tempImage else { return }
-            
-            StorageManager.shared.uploadProfilePicture(with: tempy, fileName: idd) { result in
-                switch result {
-                case .success(let downloadURL):
-                    newPost.photos = downloadURL
-                
-                case .failure(let error):
-                    print("Storage Manager Error \(error)")
-                }
-            }
-            
-        }
+        var newPost: Post = Post(username: dude.username, caption: "", comments: [:], creator: dudeID, likedUsers: [], location: "", photos: "", postTimeStamp: newT, wardrobeItems: [])
         
         if newCaption != "" {
             newPost.caption = newCaption
@@ -182,14 +171,37 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
             newPost.location = newLocation
         }
         
-        DatabaseRequest.shared.setPost(newPost) { () }
+        if didTakePicture == true && tempImage != nil {
+            
+            guard let tempy = tempImage else { return }
+            
+            StorageManager.shared.uploadPostPicture(with: tempy, fileName: idd) { result in
+                switch result {
+                case .success(let downloadURL):
+                    newPost.photos = downloadURL
+                    print(downloadURL)
+                    DatabaseRequest.shared.setPost(newPost) { (self.dismiss(animated: true, completion: nil)) }
+                case .failure(let error):
+                    print("Storage Manager Error \(error)")
+                }
+            }
+            
+        } else {
+            DatabaseRequest.shared.setPost(newPost) { (self.dismiss(animated: true, completion: nil)) }
+        }
         
-        guard let window = self.view.window else { return }
-        let vc = TabBarVC()
-        window.rootViewController = vc
-        let options: UIView.AnimationOptions = .transitionCrossDissolve
-        let duration: TimeInterval = 0.3
-        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
+        
+        
+        
+        
+        
+        
+//        guard let window = self.view.window else { return }
+//        let vc = TabBarVC()
+//        window.rootViewController = vc
+//        let options: UIView.AnimationOptions = .transitionCrossDissolve
+//        let duration: TimeInterval = 0.3
+//        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
         
     }
     

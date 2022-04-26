@@ -14,8 +14,23 @@ class ProfileVC: UIViewController {
     
     static let shared = ProfileVC()
     
+    var posts: [Post]?
+    
+    func reloadProfile(new: [Post]) {
+        posts = new
+        collectionView.reloadData()
+    }
+    
     let storage = Storage.storage()
     let tempImage: UIImage = UIImage(named: "no-profile-image")!
+    
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 50
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(ProfilePostCell.self, forCellWithReuseIdentifier: ProfilePostCell.reuseIdentifier)
+        return collectionView
+    }()
     
     private let signOutButton: UIButton = {
         let btn = UIButton()
@@ -92,17 +107,30 @@ class ProfileVC: UIViewController {
         return img
     }()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
+        posts = DatabaseRequest.shared.getProfilePosts(vc: self)
         updateProfile()
+        view.addSubview(collectionView)
+        let tabbarHeight = self.tabBarController?.tabBar.frame.size.height
+        collectionView.frame = view.bounds.inset(by: UIEdgeInsets(top: 300, left: 10, bottom: tabbarHeight!, right: 10))
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
         buttonConstraints()
         profileLabelConstraints()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.reloadInputViews()
+        posts = DatabaseRequest.shared.getProfilePosts(vc: self)
         updateProfile()
     }
     
@@ -186,6 +214,8 @@ class ProfileVC: UIViewController {
     }
     
     func updateProfile() {
+//        posts = DatabaseRequest.shared.getProfilePosts(vc: self)
+        
         guard let userInfo = AuthManager.shared.currentUser else { return }
         usernameLabel.text = userInfo.username
         if userInfo.userBio != "" {
@@ -204,8 +234,31 @@ class ProfileVC: UIViewController {
                 print("Storage Manager error \(error)")
             }
         }
-        
-        
+        collectionView.reloadData()
     }
     
+    
+}
+
+extension ProfileVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posts?.count ?? 0
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
+    UICollectionViewCell {
+        let thisPost = posts?[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfilePostCell.reuseIdentifier, for: indexPath) as! ProfilePostCell
+        cell.symbol = thisPost
+        return cell
+    }
+}
+
+extension ProfileVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width * 0.9, height: 150)
+    }
 }

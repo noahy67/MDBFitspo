@@ -20,13 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-//        if AuthManager.shared.isSignedIn() {
-//            let vc = TabBarVC()
-//            window?.rootViewController = vc
-//        } else {
+        if AuthManager.shared.isSignedIn() {
+            let vc = TabBarVC()
+            window?.rootViewController = vc
+        } else {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
             window?.rootViewController = vc
-//        }
+        }
         
         window?.makeKeyAndVisible()
     }

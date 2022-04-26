@@ -1,16 +1,16 @@
 //
-//  ProfilePostCell.swift
+//  HomePostCell.swift
 //  Fitspo
 //
-//  Created by Noah Yin on 4/22/22.
+//  Created by Noah Yin on 4/26/22.
 //
 
 import UIKit
 import Firebase
 
-class ProfilePostCell: UICollectionViewCell {
+class HomePostCell: UICollectionViewCell {
     
-    static let reuseIdentifier: String = String(describing: ProfilePostCell.self)
+    static let reuseIdentifier: String = String(describing: HomePostCell.self)
     
     let tempImage: UIImage = UIImage(named: "no-profile-image")!
     
@@ -32,23 +32,19 @@ class ProfilePostCell: UICollectionViewCell {
                     }
                 }
             }
-//            let imageRef: StorageReference = storage.reference(forURL: symbol!.photos)
-//
-//            imageRef.getData(maxSize: 1000 * 1000) { data, error in
-//
-//                if let error = error {
-//                    print("Error: \(error)")
-//                } else {
-//                    print("get photo success")
-//                    self.imageView.image = UIImage(data: data!)
-//                }
-//
-//            }
+            timeView.text = "\(String(describing: symbol?.postTimeStamp))"
             
         }
     }
     
     let captionView: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .black
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    let timeView: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -76,11 +72,14 @@ class ProfilePostCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         
         NSLayoutConstraint.activate([
+            
+            
             imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 150),
-            imageView.heightAnchor.constraint(equalToConstant: 150),
-            captionView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: contentView.widthAnchor),
+            
+            captionView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
             captionView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10)
         ])
     }

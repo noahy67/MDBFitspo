@@ -13,6 +13,11 @@ class DiscoverVC: UIViewController {
     var collectionView: UICollectionView!
 
     var dataSource: UICollectionViewDiffableDataSource<Section, App>?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

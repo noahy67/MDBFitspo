@@ -41,15 +41,38 @@ class DatabaseRequest {
     func getProfilePosts(vc: ProfileVC)->[Post] {
         var posts: [Post] = []
         if (AuthManager.shared.isSignedIn()) {
-            userListener = db.collection("posts").order(by: "startTimeStamp", descending: true)
+            userListener = db.collection("posts").order(by: "postTimeStamp", descending: true)
                 .addSnapshotListener { querySnapshot, error in
                 posts = []
                 guard let documents = querySnapshot?.documents else { return }
                 for document in documents {
-                    guard let post = try? document.data(as: Post.self) else { return }
-                    posts.append(post)
+                    guard let post = try? document.data(as: Post.self) else { continue }
+                    if post.photos != "" && post.creator == AuthManager.shared.currentUser?.uid {
+                        posts.append(post)
+                    }
+                    
                 }
-//                vc.reloadEvents(new: posts)
+                vc.reloadProfile(new: posts)
+            }
+        }
+        return posts
+    }
+    
+    func getFeedPosts(vc: HomeVC)->[Post] {
+        var posts: [Post] = []
+        if (AuthManager.shared.isSignedIn()) {
+            userListener = db.collection("posts").order(by: "postTimeStamp", descending: true)
+                .addSnapshotListener { querySnapshot, error in
+                posts = []
+                guard let documents = querySnapshot?.documents else { return }
+                for document in documents {
+                    guard let post = try? document.data(as: Post.self) else { continue }
+                    if post.photos != "" {
+                        posts.append(post)
+                    }
+                    
+                }
+                vc.reloadProfile(new: posts)
             }
         }
         return posts
