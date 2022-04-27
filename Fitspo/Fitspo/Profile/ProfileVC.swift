@@ -226,15 +226,21 @@ class ProfileVC: UIViewController {
         
         let uPhotoURL = userInfo.photoURL
         
-        StorageManager.shared.getPicture(photoURL: uPhotoURL) { result in
-            switch result {
-            case .success(let photoImage):
-                self.profilePhotoTest.image = photoImage
-                
-            case .failure(let error):
-                print("Storage Manager error \(error)")
+        if uPhotoURL != "" {
+            StorageManager.shared.getPicture(photoURL: uPhotoURL) { result in
+                switch result {
+                case .success(let photoImage):
+                    self.profilePhotoTest.image = photoImage
+                    
+                case .failure(let error):
+                    print("Storage Manager error \(error)")
+                }
             }
+        } else {
+            self.profilePhotoTest.image = tempImage
         }
+        
+        
         collectionView.reloadData()
     }
     

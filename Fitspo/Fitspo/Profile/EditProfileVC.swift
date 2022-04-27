@@ -45,7 +45,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     private let photoButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(" Take Profile Pic ", for: .normal)
+        btn.setTitle(" Select Profile Picture ", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .fitOrange
         btn.layer.cornerRadius = 10

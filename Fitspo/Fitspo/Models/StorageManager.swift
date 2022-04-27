@@ -99,6 +99,7 @@ class StorageManager {
     
     public func getPicture(photoURL: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
        
+        print("This is the URL \(photoURL)")
         let imageRef: StorageReference = storage.reference(forURL: photoURL)
        
         imageRef.getData(maxSize: 1000 * 1000) { data, error in

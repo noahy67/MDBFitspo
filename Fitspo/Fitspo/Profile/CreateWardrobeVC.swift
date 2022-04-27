@@ -1,15 +1,16 @@
 //
-//  CreatePostVC.swift
+//  CreateWardrobeVC.swift
 //  Fitspo
 //
-//  Created by Noah Yin on 4/22/22.
+//  Created by Noah Yin on 4/26/22.
 //
 
 import UIKit
-import NotificationBannerSwift
 import Firebase
+import NotificationBannerSwift
 
-class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     let storage = Storage.storage()
     
@@ -42,9 +43,10 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         return btn
     }()
     
+    
     private let photoButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(" Select Post Picture ", for: .normal)
+        btn.setTitle(" Take Post Pic ", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .fitOrange
         btn.layer.cornerRadius = 10
@@ -297,4 +299,5 @@ class CreatePostVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
                     shadowBlurRadius: 10)
         
     }
+
 }
