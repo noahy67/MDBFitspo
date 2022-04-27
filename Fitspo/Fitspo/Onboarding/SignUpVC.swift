@@ -22,7 +22,7 @@ class SignUpVC: UIViewController {
     
     private let titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "To Create Your Account,"
+        lbl.text = "Create Your Account,"
         lbl.textColor = .fitOrange
         lbl.font = .systemFont(ofSize: 30, weight: .semibold)
         

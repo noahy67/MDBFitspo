@@ -27,8 +27,7 @@ class DatabaseRequest {
             print("fuck you")
         }
     }
-    
-    
+
     func setPost(_ post: Post, completion: (()->Void)?) {
         guard let id = post.id else { return }
 
@@ -50,7 +49,6 @@ class DatabaseRequest {
                     if post.photos != "" && post.creator == AuthManager.shared.currentUser?.uid {
                         posts.append(post)
                     }
-                    
                 }
                 vc.reloadProfile(new: posts)
             }

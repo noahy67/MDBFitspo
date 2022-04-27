@@ -595,7 +595,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RN8B654VBR;
+				DEVELOPMENT_TEAM = 8X5V3RF2C2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fitspo/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow Fitspo access to take picture";
@@ -627,7 +627,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RN8B654VBR;
+				DEVELOPMENT_TEAM = 8X5V3RF2C2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fitspo/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow Fitspo access to take picture";

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIPageViewController, UIScrollViewDelegate {
 
     var posts: [Post]?
     
@@ -25,7 +25,7 @@ class HomeVC: UIViewController {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 50
+        layout.minimumLineSpacing = 0 //was 50
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(HomePostCell.self, forCellWithReuseIdentifier: HomePostCell.reuseIdentifier)
         return collectionView
@@ -41,7 +41,7 @@ class HomeVC: UIViewController {
         posts = DatabaseRequest.shared.getFeedPosts(vc: self)
         view.addSubview(collectionView)
         let tabbarHeight = self.tabBarController?.tabBar.frame.size.height
-        collectionView.frame = view.bounds.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: tabbarHeight!, right: 0))
+        collectionView.frame = view.bounds.inset(by: UIEdgeInsets(top: 40, left: 0, bottom: tabbarHeight!, right: 0))
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -80,6 +80,8 @@ extension HomeVC: UICollectionViewDataSource {
         let thisPost = posts?[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePostCell.reuseIdentifier, for: indexPath) as! HomePostCell
         cell.symbol = thisPost
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
         return cell
     }
 }
@@ -87,6 +89,6 @@ extension HomeVC: UICollectionViewDataSource {
 extension HomeVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width + 30)
+        return CGSize(width: view.frame.width, height: view.frame.width * 1.6)
     }
 }
