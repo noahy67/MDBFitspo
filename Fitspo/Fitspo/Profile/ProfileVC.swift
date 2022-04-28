@@ -48,7 +48,6 @@ class ProfileVC: UIViewController {
     
     private let toWardrobeButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(" Go To Wardrobe ", for: .normal)
         btn.setImage(UIImage(systemName: "book.closed")?.withTintColor(.fitOrange, renderingMode: .alwaysOriginal), for: .normal)
         btn.setTitleColor(.fitOrange, for: .normal)
         btn.backgroundColor = .clear
@@ -56,6 +55,8 @@ class ProfileVC: UIViewController {
         btn.layer.shadowRadius = 10
         btn.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.contentVerticalAlignment = .fill
+        btn.contentHorizontalAlignment = .fill
         return btn
     }()
     
@@ -68,6 +69,8 @@ class ProfileVC: UIViewController {
         btn.layer.shadowRadius = 10
         btn.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.contentVerticalAlignment = .fill
+        btn.contentHorizontalAlignment = .fill
         return btn
     }()
     
