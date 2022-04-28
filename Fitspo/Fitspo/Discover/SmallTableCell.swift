@@ -17,7 +17,7 @@ class SmallTableCell: UICollectionViewCell, SelfConfiguringCell {
         super.init(frame: frame)
 
         //change font here
-        name.font = UIFont.preferredFont(forTextStyle: .title2)
+        name.font = UIFont(name: "ReemKufi", size: 25)
         name.textColor = .label
 
         imageView.layer.cornerRadius = 5

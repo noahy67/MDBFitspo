@@ -19,12 +19,15 @@ class MediumTableCell: UICollectionViewCell, SelfConfiguringCell {
         super.init(frame: frame)
 
         //change font here
-        name.font = UIFont.preferredFont(forTextStyle: .headline)
         name.textColor = .label
+        name.font = UIFont(name: "ReemKufi", size: 20)
+        
 
         //change font here
-        subtitle.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        
         subtitle.textColor = .secondaryLabel
+        subtitle.font = UIFont(name: "ReemKufi", size: 15)
+        
 
         imageView.layer.cornerRadius = 15
         imageView.clipsToBounds = true

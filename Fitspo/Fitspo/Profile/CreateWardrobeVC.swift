@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import NotificationBannerSwift
+import iOSDropDown
 
 
 class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -17,6 +18,16 @@ class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINav
     var tempImage: UIImage? = nil
     
     var didTakePicture: Bool = false
+    
+    public var typeText: String = ""
+    
+    var colorText: String = ""
+    
+    var brandText: String = ""
+    
+    func setTypeText(vc: CreateWardrobeVC, new: String) {
+        vc.typeText = new
+    }
     
     private let backButton: UIButton = {
         let btn = UIButton()
@@ -46,7 +57,7 @@ class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINav
     
     private let photoButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(" Take Post Pic ", for: .normal)
+        btn.setTitle(" Take Item Picture ", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .fitOrange
         btn.layer.cornerRadius = 10
@@ -60,21 +71,14 @@ class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINav
         let stack = UIStackView()
         stack.axis = .vertical
         stack.distribution = .equalSpacing
-        stack.spacing = 25
+        stack.spacing = 50
 
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
-    private let locationTextField: AuthTextField = {
-        let tf = AuthTextField(title: "Location:")
-        
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        return tf
-    }()
-    
-    private let captionTextField: AuthTextField = {
-        let tf = AuthTextField(title: "Caption:")
+    private let tagTextField: AuthTextField = {
+        let tf = AuthTextField(title: "Item name:")
         
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
@@ -86,9 +90,92 @@ class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINav
         img.layer.borderWidth = 5
         img.layer.masksToBounds = false
         img.clipsToBounds = true
-        img.sizeThatFits(CGSize.init(width: 200, height: 200))
+        img.layer.cornerRadius = 20
+        img.sizeThatFits(CGSize.init(width: 150, height: 150))
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
+    }()
+    
+    public let typeDropDown: DropDown = {
+        let dd = DropDown(frame: CGRect(x: 110, y: 140, width: 200, height: 60))
+        dd.isSearchEnable = true
+        dd.optionArray = ["Top", "Bottom", "Shoes", "Headwear", "Outerwear"]
+        dd.cornerRadius = 10
+        dd.selectedRowColor = .fitOrange
+        dd.arrowColor = .fitOrange
+        dd.rowHeight = 30
+        dd.backgroundColor = UIColor(hex: "#f7f7f7")
+        
+        dd.didSelect { selectedText, index, id in
+            print("This SelectedText is: \(selectedText)")
+            
+        }
+        dd.translatesAutoresizingMaskIntoConstraints = false
+        return dd
+    }()
+
+    
+    public let typeDDLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .secondaryText
+        lbl.numberOfLines = 1
+        lbl.textAlignment = .left
+        lbl.font = .systemFont(ofSize: 13, weight: .semibold)
+        lbl.text = "SELECT THE ITEM TYPE:"
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    private let brandDropDown: DropDown = {
+        let dd = DropDown(frame: CGRect(x: 110, y: 140, width: 200, height: 60))
+        dd.isSearchEnable = true
+        dd.optionArray = ["Nike", "Louis Vuitton", "Hermes", "Gucci", "Zalando", "Adidas", "Tiffany & Co", "Zara", "H&M", "Cartier", "Lululemon", "Moncler", "Chanel", "Rolex", "Patek Philippe", "Prada", "Uniqlo", "Chow Tai Fook", "Swarovski", "Burberry", "Polo Ralph Lauren", "Tom Ford", "The North Face", "Levi’s", "Victoria’s Secret", "Next", "New Balance", "Michael Kors", "Skechers", "TJ Maxx", "ASOS", "Under Armour", "Coach", "Nordstrom", "C&A", "Chopard", "Dolce & Gabbana", "Christian Louboutin", "Omega", "Foot Locker Inc", "Ray Ban", "Macy’s", "Asics", "Vera Wang", "Dior", "Puma", "Steve Madden", "Brunello Cucinelli", "American Eagle Outfitters", "Armani", "Nine West", "Fendi", "Urban Outfitters", "Salvatore Ferragamo", "Hugo Boss", "Old Navy", "IWC Schaffhausen", "Primark", "Max Mara", "Manolo Blahnik", "Audemars Piguet", "Diesel", "Calvin Klein", "Net-a-Porter", "Furla", "GAP", "Longines", "Forever", "Stuart Weitzman", "Longchamp", "Sisley", "Lao Feng Xiang", "TOD’s", "Tissot", "Tommy Hilfiger", "Tory Burch", "Lacoste", "Topshop", "G-star", "Aldo", "Oakley", "Cole Haan", "Jimmy Choo", "Valentino", "Elie Taharie", "Jaeger-Le Coultre", "Fossil", "Vacheron Constantin", "Elie Saab", "Patagonia", "Bogner", "New Look", "Breguet", "ESCADA", "Tag Heuer", "Banana Republic", "Desigual", "Swatch", "Cavalli", "Ted Baker"]
+        dd.cornerRadius = 10
+        dd.selectedRowColor = .fitOrange
+        dd.arrowColor = .fitOrange
+        dd.rowHeight = 30
+        dd.backgroundColor = UIColor(hex: "#f7f7f7")
+        
+        
+        dd.translatesAutoresizingMaskIntoConstraints = false
+        return dd
+    }()
+    
+    private let brandDDLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .secondaryText
+        lbl.numberOfLines = 1
+        lbl.textAlignment = .left
+        lbl.font = .systemFont(ofSize: 13, weight: .semibold)
+        lbl.text = "SELECT THE ITEM BRAND:"
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    private let colorDropDown: DropDown = {
+        let dd = DropDown(frame: CGRect(x: 110, y: 140, width: 200, height: 60))
+        dd.isSearchEnable = true
+        dd.optionArray = ["White", "Yellow", "Blue", "Red", "Green", "Black", "Brown", "Azure", "Ivory", "Teal", "Silver", "Purple", "Navy blue", "Pea green", "Gray", "Orange", "Maroon", "Charcoal", "Aquamarine", "Coral", "Fuchsia", "Wheat", "Lime", "Crimson", "Khaki", "Hot pink", "Magenta", "Olden", "Plum", "Olive", "Cyan"]
+        dd.cornerRadius = 10
+        dd.selectedRowColor = .fitOrange
+        dd.arrowColor = .fitOrange
+        dd.rowHeight = 30
+        dd.backgroundColor = UIColor(hex: "#f7f7f7")
+        
+        
+        dd.translatesAutoresizingMaskIntoConstraints = false
+        return dd
+    }()
+    
+    private let colorDDLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .secondaryText
+        lbl.numberOfLines = 1
+        lbl.textAlignment = .left
+        lbl.font = .systemFont(ofSize: 13, weight: .semibold)
+        lbl.text = "SELECT THE ITEM COLOR:"
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
     }()
     
     private let contentEdgeInset = UIEdgeInsets(top: 120, left: 40, bottom: 30, right: 40)
@@ -96,15 +183,46 @@ class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINav
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         view.backgroundColor = .systemBackground
+        
+        typeDropDown.didSelect { selectedText, index, id in
+            print("VEWDIDLOAD: \(selectedText)")
+            self.typeText = selectedText
+        }
+        
+        brandDropDown.didSelect { selectedText, index, id in
+            self.brandText = selectedText
+        }
+        
+        colorDropDown.didSelect { selectedText, index, id in
+            self.colorText = selectedText
+        }
+        
         buttonConstraints()
         stackConstraints()
         view.addSubview(profilePhotoTest)
         NSLayoutConstraint.activate([
             profilePhotoTest.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 50),
-            profilePhotoTest.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: -100),
-            profilePhotoTest.trailingAnchor.constraint(equalTo: profilePhotoTest.leadingAnchor, constant: 200),
-            profilePhotoTest.bottomAnchor.constraint(equalTo: profilePhotoTest.topAnchor, constant: 200)
+            profilePhotoTest.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: -75),
+            profilePhotoTest.trailingAnchor.constraint(equalTo: profilePhotoTest.leadingAnchor, constant: 150),
+            profilePhotoTest.bottomAnchor.constraint(equalTo: profilePhotoTest.topAnchor, constant: 150)
+        ])
+        
+        view.addSubview(typeDDLabel)
+        NSLayoutConstraint.activate([
+            typeDDLabel.bottomAnchor.constraint(equalTo: typeDropDown.topAnchor, constant: -10),
+            typeDDLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: contentEdgeInset.left)
+        ])
+        view.addSubview(brandDDLabel)
+        NSLayoutConstraint.activate([
+            brandDDLabel.bottomAnchor.constraint(equalTo: brandDropDown.topAnchor, constant: -10),
+            brandDDLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: contentEdgeInset.left)
+        ])
+        view.addSubview(colorDDLabel)
+        NSLayoutConstraint.activate([
+            colorDDLabel.bottomAnchor.constraint(equalTo: colorDropDown.topAnchor, constant: -10),
+            colorDDLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: contentEdgeInset.left)
         ])
     }
     
@@ -135,8 +253,10 @@ class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINav
     
     private func stackConstraints() {
         view.addSubview(stack)
-        stack.addArrangedSubview(captionTextField)
-        stack.addArrangedSubview(locationTextField)
+        stack.addArrangedSubview(tagTextField)
+        stack.addArrangedSubview(typeDropDown)
+        stack.addArrangedSubview(brandDropDown)
+        stack.addArrangedSubview(colorDropDown)
         stack.addArrangedSubview(photoButton)
         NSLayoutConstraint.activate([
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor,
@@ -160,64 +280,46 @@ class CreateWardrobeVC: UIViewController, UIImagePickerControllerDelegate, UINav
         doneButton.showLoading()
         sender.isUserInteractionEnabled = false
         
-        if didTakePicture == false {
-            self.showErrorBanner(withTitle: "No Picture Added", subtitle: "Cannot create a post without a picture, please select one or click the back button")
+        guard let newTag = tagTextField.text else { return }
+        
+        if newTag == "" {
+            self.showErrorBanner(withTitle: "No Item Name Added", subtitle: "Cannot create a wardrobe item without a name, please create one or click the back button")
+            sender.isUserInteractionEnabled = true
             return
         }
         
-        guard let newCaption = captionTextField.text else { return }
-        guard let newLocation = locationTextField.text else { return }
+        if didTakePicture == false {
+            self.showErrorBanner(withTitle: "No Picture Added", subtitle: "Cannot create a wardrobe item without a picture, please select one or click the back button")
+            sender.isUserInteractionEnabled = true
+            return
+        }
         
         let idd = UUID().uuidString
         
         guard let dude = AuthManager.shared.currentUser else { return }
         guard let dudeID = dude.uid else { return }
         
-        let newT: Timestamp = Timestamp.init()
-        
-        var newPost: Post = Post(username: dude.username, caption: "", comments: [:], creator: dudeID, likedUsers: [], location: "", photos: "", postTimeStamp: newT, wardrobeItems: [])
-        
-        if newCaption != "" {
-            newPost.caption = newCaption
-        }
-        if newLocation != "" {
-            newPost.location = newLocation
-        }
+        var newWardrobe: WardrobeItem = WardrobeItem(creator: dudeID, tag: newTag, color: colorText, brand: brandText, type: typeText, itemURL: "", photoURL: "")
         
         if didTakePicture == true && tempImage != nil {
             
             guard let tempy = tempImage else { return }
             
-            StorageManager.shared.uploadPostPicture(with: tempy, fileName: idd) { result in
+            StorageManager.shared.uploadWardrobePicture(with: tempy, fileName: idd) { result in
                 switch result {
                 case .success(let downloadURL):
-                    newPost.photos = downloadURL
+                    newWardrobe.photoURL = downloadURL
                     print(downloadURL)
                    
-                    DatabaseRequest.shared.setPost(newPost) { (self.dismiss(animated: true, completion: nil)) }
+                    DatabaseRequest.shared.setWardrobeItem(newWardrobe) { (self.dismiss(animated: true, completion: nil)) }
+                
                 case .failure(let error):
                     print("Storage Manager Error \(error)")
                 }
             }
-            
         } else {
-        
-            DatabaseRequest.shared.setPost(newPost) { (self.dismiss(animated: true, completion: nil)) }
+            DatabaseRequest.shared.setWardrobeItem(newWardrobe) { (self.dismiss(animated: true, completion: nil)) }
         }
-        
-        
-        
-        
-        
-        
-        
-//        guard let window = self.view.window else { return }
-//        let vc = TabBarVC()
-//        window.rootViewController = vc
-//        let options: UIView.AnimationOptions = .transitionCrossDissolve
-//        let duration: TimeInterval = 0.3
-//        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
-        
     }
     
     @objc private func didTapPhotoButton(_ sender: UIButton) {

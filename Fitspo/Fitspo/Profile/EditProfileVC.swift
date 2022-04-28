@@ -153,6 +153,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @objc func didTapBackButton(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc private func didTapDone(_ sender: UIButton) {

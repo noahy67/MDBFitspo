@@ -32,47 +32,47 @@ class ProfileVC: UIViewController {
         return collectionView
     }()
     
-    private let signOutButton: UIButton = {
+    private let settingsButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(" Sign Out ", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .fitOrange
-        btn.layer.cornerRadius = 10
-        btn.layer.shadowRadius = 10
-        btn.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
-    private let editProfileButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle(" Edit Profile ", for: .normal)
-        btn.setTitleColor(.fitOrange, for: .normal)
+        btn.setImage(UIImage(systemName: "gearshape")?.withTintColor(.fitOrange, renderingMode: .alwaysOriginal), for: .normal)
         btn.backgroundColor = .clear
         btn.layer.cornerRadius = 10
         btn.layer.shadowRadius = 10
         btn.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.contentVerticalAlignment = .fill
+        btn.contentHorizontalAlignment = .fill
         return btn
     }()
     
     private let createPostButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle(" Create A Post ", for: .normal)
-        btn.setTitleColor(.fitOrange, for: .normal)
+        btn.setImage(UIImage(systemName: "plus.app")?.withTintColor(.fitOrange, renderingMode: .alwaysOriginal), for: .normal)
         btn.backgroundColor = .clear
         btn.layer.cornerRadius = 10
         btn.layer.shadowRadius = 10
         btn.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.contentVerticalAlignment = .fill
+        btn.contentHorizontalAlignment = .fill
+//        btn.imageEdgeInsets = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
     
     private let usernameLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "username"
-        lbl.font = .systemFont(ofSize: 30, weight: .bold)
+        lbl.font = UIFont(name: "ReemKufi", size: 35)
         lbl.textColor = .fitBlue
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    private let nameLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "name"
+        lbl.font = UIFont(name: "ReemKufi", size: 25)
+        lbl.textColor = .gray
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -80,17 +80,17 @@ class ProfileVC: UIViewController {
     private let userBioLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "user bio"
-        lbl.font = .systemFont(ofSize: 20, weight: .semibold)
-        lbl.textColor = .fitLavendar
+        lbl.font = UIFont(name: "ReemKufi", size: 15)
+        lbl.textColor = .fitMystic
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
     private let followersLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "followers"
-        lbl.font = .systemFont(ofSize: 20, weight: .semibold)
-        lbl.textColor = .fitLavendar
+        lbl.text = " followers "
+        lbl.font = UIFont(name: "ReemKufi", size: 25)
+        lbl.textColor = .fitMystic
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -98,11 +98,11 @@ class ProfileVC: UIViewController {
     private let profilePhotoTest: UIImageView = {
         let img = UIImageView()
         img.layer.borderColor = UIColor.fitOrange.cgColor
-        img.layer.borderWidth = 5
+        img.layer.borderWidth = 2
         img.layer.masksToBounds = false
         img.clipsToBounds = true
-        img.sizeThatFits(CGSize.init(width: 160, height: 160))
-        img.layer.cornerRadius = 160 / 2
+        img.sizeThatFits(CGSize.init(width: 80, height: 80))
+        img.layer.cornerRadius = 65
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
@@ -141,69 +141,55 @@ class ProfileVC: UIViewController {
         view.addSubview(userBioLabel)
         view.addSubview(followersLabel)
         view.addSubview(profilePhotoTest)
+        view.addSubview(nameLabel)
+        
+        buttonConstraints()
         
         NSLayoutConstraint.activate([
-            profilePhotoTest.topAnchor.constraint(equalTo: editProfileButton.bottomAnchor, constant: 20),
+            
+            profilePhotoTest.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: -10),
             profilePhotoTest.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            profilePhotoTest.trailingAnchor.constraint(equalTo: profilePhotoTest.leadingAnchor, constant: 160),
-            profilePhotoTest.bottomAnchor.constraint(equalTo: profilePhotoTest.topAnchor, constant: 160)
-            ])
-        
-        NSLayoutConstraint.activate([
-            usernameLabel.topAnchor.constraint(equalTo: editProfileButton.bottomAnchor, constant: 30),
-            usernameLabel.leadingAnchor.constraint(equalTo: profilePhotoTest.trailingAnchor, constant: 10)
-            ])
-        
-        NSLayoutConstraint.activate([
-            userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 20),
-            userBioLabel.leadingAnchor.constraint(equalTo: profilePhotoTest.trailingAnchor, constant: 10)
-            ])
-        
-        NSLayoutConstraint.activate([
-            followersLabel.topAnchor.constraint(equalTo: userBioLabel.bottomAnchor, constant: 20),
-            followersLabel.leadingAnchor.constraint(equalTo: profilePhotoTest.trailingAnchor, constant: 10)
+            profilePhotoTest.widthAnchor.constraint(equalToConstant: 130),
+            profilePhotoTest.heightAnchor.constraint(equalTo: profilePhotoTest.widthAnchor),
+            
+            usernameLabel.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: -5),
+            usernameLabel.leadingAnchor.constraint(equalTo: profilePhotoTest.trailingAnchor, constant: 15),
+            
+            nameLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: -5),
+            nameLabel.leadingAnchor.constraint(equalTo: profilePhotoTest.trailingAnchor, constant: 15),
+            
+            userBioLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            userBioLabel.leadingAnchor.constraint(equalTo: profilePhotoTest.trailingAnchor, constant: 15),
+            
+            followersLabel.topAnchor.constraint(equalTo: profilePhotoTest.bottomAnchor, constant: 10),
+            followersLabel.centerXAnchor.constraint(equalTo: profilePhotoTest.centerXAnchor),
+            
             ])
         
     }
     
     private func buttonConstraints() {
-        view.addSubview(signOutButton)
-        view.addSubview(editProfileButton)
+        
+        view.addSubview(settingsButton)
         view.addSubview(createPostButton)
-        NSLayoutConstraint.activate([
-            signOutButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            signOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
-            ])
-        signOutButton.addTarget(self, action: #selector(didTapSignOut(_:)), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            editProfileButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            editProfileButton.trailingAnchor.constraint(equalTo: signOutButton.leadingAnchor, constant: -20)
+            settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            settingsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            settingsButton.heightAnchor.constraint(equalToConstant: 40),
+            settingsButton.widthAnchor.constraint(equalToConstant: 45),
+
+            createPostButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            createPostButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            createPostButton.heightAnchor.constraint(equalToConstant: 40),
+            createPostButton.widthAnchor.constraint(equalToConstant: 45)
             ])
-        
-        editProfileButton.addTarget(self, action: #selector(didTapEditProfile(_:)), for: .touchUpInside)
-        
-        NSLayoutConstraint.activate([
-            createPostButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            createPostButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
-            ])
-        
+        settingsButton.addTarget(self, action: #selector(didTapSettings(_:)), for: .touchUpInside)
         createPostButton.addTarget(self, action: #selector(didTapCreatePost(_:)), for: .touchUpInside)
     }
     
-    @objc func didTapSignOut(_ sender: UIButton) {
-        AuthManager.shared.signOut {
-            guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first else { return }
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-            window.rootViewController = vc
-            let options: UIView.AnimationOptions = .transitionCrossDissolve
-            let duration: TimeInterval = 0.3
-            UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
-        }
-    }
-    
-    @objc func didTapEditProfile(_ sender: UIButton) {
-        let vc = EditProfileVC()
+    @objc func didTapSettings(_ sender: UIButton) {
+        let vc = settingsVC()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
@@ -240,6 +226,7 @@ class ProfileVC: UIViewController {
             self.profilePhotoTest.image = tempImage
         }
         
+        nameLabel.text = "\(userInfo.fullname)"
         
         collectionView.reloadData()
     }

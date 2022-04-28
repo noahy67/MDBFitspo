@@ -15,6 +15,12 @@
 		55969E8D281683290030B938 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E8C281683290030B938 /* Section.swift */; };
 		55969E8F281683300030B938 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E8E281683300030B938 /* SelfConfiguringCell.swift */; };
 		55969E91281683380030B938 /* SmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55969E90281683380030B938 /* SmallTableCell.swift */; };
+		55F46E602819EFE300B8A4BF /* settingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F46E5F2819EFE300B8A4BF /* settingsVC.swift */; };
+		55F46E63281A012500B8A4BF /* fitspologo.png in Resources */ = {isa = PBXBuildFile; fileRef = 55F46E62281A012500B8A4BF /* fitspologo.png */; };
+		55F46E66281A071700B8A4BF /* ReemKufi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55F46E65281A071700B8A4BF /* ReemKufi.ttf */; };
+		55F46E68281A169200B8A4BF /* WardrobeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F46E67281A169200B8A4BF /* WardrobeVC.swift */; };
+		55F46E6A281A16B300B8A4BF /* WardrobeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F46E69281A16B300B8A4BF /* WardrobeCell.swift */; };
+		9CC0135A580CFCD82C403A98 /* Pods_Fitspo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43D6B1B9F50D5153D7E6FBE /* Pods_Fitspo.framework */; };
 		9D38B932281391E300B3ED90 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B931281391E300B3ED90 /* CreatePostVC.swift */; };
 		9D38B9342813D57E00B3ED90 /* ProfilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B9332813D57E00B3ED90 /* ProfilePostCell.swift */; };
 		9D38B9362813DB8800B3ED90 /* ProfilePostPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B9352813DB8800B3ED90 /* ProfilePostPreviewVC.swift */; };
@@ -80,6 +86,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EE79E8312C75870BA3FFA89 /* Pods-Fitspo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitspo.debug.xcconfig"; path = "Target Support Files/Pods-Fitspo/Pods-Fitspo.debug.xcconfig"; sourceTree = "<group>"; };
 		55969E82281682D70030B938 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		55969E84281683050030B938 /* SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		55969E862816830F0030B938 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -88,6 +95,12 @@
 		55969E8C281683290030B938 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		55969E8E281683300030B938 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		55969E90281683380030B938 /* SmallTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallTableCell.swift; sourceTree = "<group>"; };
+		55F46E5F2819EFE300B8A4BF /* settingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsVC.swift; sourceTree = "<group>"; };
+		55F46E62281A012500B8A4BF /* fitspologo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitspologo.png; sourceTree = "<group>"; };
+		55F46E65281A071700B8A4BF /* ReemKufi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ReemKufi.ttf; sourceTree = "<group>"; };
+		55F46E67281A169200B8A4BF /* WardrobeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeVC.swift; sourceTree = "<group>"; };
+		55F46E69281A16B300B8A4BF /* WardrobeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCell.swift; sourceTree = "<group>"; };
+		8946596A5B6C1D0E2B1C3308 /* Pods-Fitspo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitspo.release.xcconfig"; path = "Target Support Files/Pods-Fitspo/Pods-Fitspo.release.xcconfig"; sourceTree = "<group>"; };
 		9D38B931281391E300B3ED90 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		9D38B9332813D57E00B3ED90 /* ProfilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostCell.swift; sourceTree = "<group>"; };
 		9D38B9352813DB8800B3ED90 /* ProfilePostPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostPreviewVC.swift; sourceTree = "<group>"; };
@@ -123,6 +136,7 @@
 		9DD61DDB28188884006B3A50 /* CreateWardrobeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWardrobeVC.swift; sourceTree = "<group>"; };
 		9DF95F0F280E7FDE007967C0 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		9DF95F11281000E2007967C0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		E43D6B1B9F50D5153D7E6FBE /* Pods_Fitspo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitspo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,17 +173,46 @@
 				9D51C0172808F4260056CBF5 /* FirebaseAnalytics in Frameworks */,
 				9D51C0412808F4260056CBF5 /* FirebaseMessaging in Frameworks */,
 				9D51C03D2808F4260056CBF5 /* FirebaseInstallations in Frameworks */,
+				9CC0135A580CFCD82C403A98 /* Pods_Fitspo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FF882B5358740297C205D33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EE79E8312C75870BA3FFA89 /* Pods-Fitspo.debug.xcconfig */,
+				8946596A5B6C1D0E2B1C3308 /* Pods-Fitspo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		54095C778116276EE803F9B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E43D6B1B9F50D5153D7E6FBE /* Pods_Fitspo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55F46E61281A010E00B8A4BF /* AppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				55F46E62281A012500B8A4BF /* fitspologo.png */,
+			);
+			path = AppIcons;
+			sourceTree = "<group>";
+		};
 		9D51BFF32807AEA20056CBF5 = {
 			isa = PBXGroup;
 			children = (
 				9D51BFFE2807AEA20056CBF5 /* Fitspo */,
 				9D51BFFD2807AEA20056CBF5 /* Products */,
+				4FF882B5358740297C205D33 /* Pods */,
+				54095C778116276EE803F9B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +235,7 @@
 				9D9A444E280CA4940002E97B /* Models */,
 				9D9A444D280CA46C0002E97B /* Onboarding */,
 				9D9A444C280CA4640002E97B /* Storyboard */,
+				55F46E61281A010E00B8A4BF /* AppIcons */,
 				9D9A444A280CA44A0002E97B /* Extensions */,
 				9D51C0082807AEA30056CBF5 /* Assets.xcassets */,
 				9D51C00D2807AEA30056CBF5 /* Info.plist */,
@@ -265,10 +309,13 @@
 			children = (
 				9D9A447D280CD53B0002E97B /* ProfileVC.swift */,
 				9DF95F0F280E7FDE007967C0 /* EditProfileVC.swift */,
+				55F46E5F2819EFE300B8A4BF /* settingsVC.swift */,
 				9D38B931281391E300B3ED90 /* CreatePostVC.swift */,
 				9D38B9332813D57E00B3ED90 /* ProfilePostCell.swift */,
 				9D38B9352813DB8800B3ED90 /* ProfilePostPreviewVC.swift */,
 				9DD61DDB28188884006B3A50 /* CreateWardrobeVC.swift */,
+				55F46E67281A169200B8A4BF /* WardrobeVC.swift */,
+				55F46E69281A16B300B8A4BF /* WardrobeCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -278,6 +325,7 @@
 			children = (
 				9D9A4481280CD5630002E97B /* DiscoverVC.swift */,
 				55969E882816831B0030B938 /* FeaturedCell.swift */,
+				55F46E65281A071700B8A4BF /* ReemKufi.ttf */,
 				55969E8A281683240030B938 /* MediumTableCell.swift */,
 				55969E90281683380030B938 /* SmallTableCell.swift */,
 				55969E8E281683300030B938 /* SelfConfiguringCell.swift */,
@@ -309,9 +357,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D51C0102807AEA30056CBF5 /* Build configuration list for PBXNativeTarget "Fitspo" */;
 			buildPhases = (
+				44AE7C996BA1D10771B056A0 /* [CP] Check Pods Manifest.lock */,
 				9D51BFF82807AEA20056CBF5 /* Sources */,
 				9D51BFF92807AEA20056CBF5 /* Frameworks */,
 				9D51BFFA2807AEA20056CBF5 /* Resources */,
+				5A38E01852081F2F49B50FBB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,7 +429,7 @@
 			mainGroup = 9D51BFF32807AEA20056CBF5;
 			packageReferences = (
 				9D51C0152808F4260056CBF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner" */,
+				9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner.git" */,
 			);
 			productRefGroup = 9D51BFFD2807AEA20056CBF5 /* Products */;
 			projectDirPath = "";
@@ -395,7 +445,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F46E66281A071700B8A4BF /* ReemKufi.ttf in Resources */,
 				9D9A4472280CC5170002E97B /* Feed.storyboard in Resources */,
+				55F46E63281A012500B8A4BF /* fitspologo.png in Resources */,
 				9D51C00C2807AEA30056CBF5 /* LaunchScreen.storyboard in Resources */,
 				9DD61DD828168EA3006B3A50 /* discovercontents.json in Resources */,
 				9D9A4476280CC7950002E97B /* GoogleService-Info.plist in Resources */,
@@ -406,6 +458,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44AE7C996BA1D10771B056A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fitspo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A38E01852081F2F49B50FBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitspo/Pods-Fitspo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitspo/Pods-Fitspo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitspo/Pods-Fitspo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9D51BFF82807AEA20056CBF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -415,6 +509,8 @@
 				9DD61DDC28188884006B3A50 /* CreateWardrobeVC.swift in Sources */,
 				9D9A445C280CA7F20002E97B /* LoadingButton.swift in Sources */,
 				9D9A4452280CA60A0002E97B /* UIColor+ColorScheme.swift in Sources */,
+				55F46E68281A169200B8A4BF /* WardrobeVC.swift in Sources */,
+				55F46E6A281A16B300B8A4BF /* WardrobeCell.swift in Sources */,
 				9D9A4462280CA95A0002E97B /* DatabaseRequest.swift in Sources */,
 				9DF95F10280E7FDE007967C0 /* EditProfileVC.swift in Sources */,
 				55969E872816830F0030B938 /* App.swift in Sources */,
@@ -423,6 +519,7 @@
 				9D9A4464280CAA1D0002E97B /* Post.swift in Sources */,
 				55969E8D281683290030B938 /* Section.swift in Sources */,
 				9D38B9362813DB8800B3ED90 /* ProfilePostPreviewVC.swift in Sources */,
+				55F46E602819EFE300B8A4BF /* settingsVC.swift in Sources */,
 				9D38B9342813D57E00B3ED90 /* ProfilePostCell.swift in Sources */,
 				9D9A4458280CA7860002E97B /* AuthTextField.swift in Sources */,
 				9D51C0002807AEA20056CBF5 /* AppDelegate.swift in Sources */,
@@ -589,6 +686,7 @@
 		};
 		9D51C0112807AEA30056CBF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EE79E8312C75870BA3FFA89 /* Pods-Fitspo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -621,6 +719,7 @@
 		};
 		9D51C0122807AEA30056CBF5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8946596A5B6C1D0E2B1C3308 /* Pods-Fitspo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -683,7 +782,7 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner" */ = {
+		9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Daltron/NotificationBanner.git";
 			requirement = {
@@ -836,7 +935,7 @@
 		};
 		9D9A446A280CABA70002E97B /* NotificationBannerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner" */;
+			package = 9D9A4469280CABA70002E97B /* XCRemoteSwiftPackageReference "NotificationBanner.git" */;
 			productName = NotificationBannerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

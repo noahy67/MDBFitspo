@@ -13,6 +13,10 @@ typealias WardrobeItemID = String
 struct WardrobeItem: Codable {
     @DocumentID var id: WardrobeItemID? = UUID().uuidString
     
+    var creator: UserID
+    
+    var tag: String
+    
     var color: String
     
     var brand: String

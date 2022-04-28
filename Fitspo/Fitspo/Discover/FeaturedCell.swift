@@ -22,13 +22,15 @@ class FeaturedCell: UICollectionViewCell, SelfConfiguringCell {
         separator.translatesAutoresizingMaskIntoConstraints = false
         separator.backgroundColor = .quaternaryLabel
 
-        tagline.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 12, weight: .bold))
+//        tagline.font = UIFont(name: "ReemKufi", size: 20)
+        
+        tagline.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 15, weight: .bold))
         tagline.textColor = .systemBlue
 
-        name.font = UIFont.preferredFont(forTextStyle: .title2)
+        name.font = UIFont(name: "ReemKufi", size: 25)
         name.textColor = .label
 
-        subtitle.font = UIFont.preferredFont(forTextStyle: .title2)
+        subtitle.font = UIFont(name: "ReemKufi", size: 15)
         subtitle.textColor = .secondaryLabel
 
         imageView.layer.cornerRadius = 5

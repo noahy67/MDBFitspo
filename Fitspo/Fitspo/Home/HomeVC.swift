@@ -37,7 +37,6 @@ class HomeVC: UIPageViewController, UIScrollViewDelegate {
         view.backgroundColor = .systemBackground
         
         collectionView.addSubview(refreshControl)
-        
         posts = DatabaseRequest.shared.getFeedPosts(vc: self)
         view.addSubview(collectionView)
         let tabbarHeight = self.tabBarController?.tabBar.frame.size.height
@@ -89,6 +88,7 @@ extension HomeVC: UICollectionViewDataSource {
 extension HomeVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width * 1.6)
+        return CGSize(width: view.frame.width, height: view.frame.width * 1.85)
     }
+    
 }
