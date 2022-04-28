@@ -15,51 +15,51 @@
 			},
 			{
 				"id": 12,
-				"tagline": "Goated",
-				"name": "Smartwhirl",
-				"subheading": "People who love whirling just like you!",
-				"image": "",
-				"iap": false
+                "tagline": "Goated",
+                "name": "Tokyo, Japan",
+                "subheading": "A blend of old and new Japanese fashion",
+                "image": "",
+                "iap": true
 			},
 			{
 				"id": 13,
-				"tagline": "Goated",
-				"name": "Professorify",
-				"subheading": "Introducing the world’s first experienced professor.",
-				"image": "",
-				"iap": true
+                "tagline": "Goated",
+                "name": "Tokyo, Japan",
+                "subheading": "A blend of old and new Japanese fashion",
+                "image": "",
+                "iap": true
 			},
 			{
 				"id": 14,
-				"tagline": "Featured",
-				"name": "SituationMe",
-				"subheading": "Your Situation. Dedicated.",
-				"image": "iOS4",
-				"iap": false
+                "tagline": "Goated",
+                "name": "Tokyo, Japan",
+                "subheading": "A blend of old and new Japanese fashion",
+                "image": "",
+                "iap": true
 			},
 			{
 				"id": 15,
-				"tagline": "New update",
-				"name": "Squeally",
-				"subheading": "Motivate your niche in the squealing ecosystem.",
-				"image": "iOS5",
-				"iap": true
+                "tagline": "Goated",
+                "name": "Tokyo, Japan",
+                "subheading": "A blend of old and new Japanese fashion",
+                "image": "",
+                "iap": true
 			},
 			{
 				"id": 16,
-				"tagline": "See it in dark mode",
-				"name": "youplayer",
-				"subheading": "Harmonize your inner player.",
-				"image": "iOS6",
-				"iap": false
+                "tagline": "Goated",
+                "name": "Tokyo, Japan",
+                "subheading": "A blend of old and new Japanese fashion",
+                "image": "",
+                "iap": true
 			},
 			{
 				"id": 17,
-				"tagline": "Must-have app",
-				"name": "Spellnow",
-				"subheading": "Dare to spell the smart way.",
-				"image": "iOS7",
-				"iap": true
+                "tagline": "Goated",
+                "name": "Tokyo, Japan",
+                "subheading": "A blend of old and new Japanese fashion",
+                "image": "",
+                "iap": true
 			},
 			{
 				"id": 18,
@@ -120,67 +120,67 @@
 			{
 				"id": 21,
 				"tagline": "Featured",
-				"name": "Strokey",
-				"subheading": "You'll never stroke the same way again.",
+				"name": "Nike AirForce 1",
+				"subheading": "Simple yet Elegant.",
 				"image": "iOS1",
 				"iap": true
 			},
 			{
 				"id": 22,
-				"tagline": "See it in dark mode",
-				"name": "Smartwhirl",
-				"subheading": "People who love whirling just like you!",
-				"image": "iOS2",
-				"iap": false
+                "tagline": "Featured",
+                "name": "Nike AirForce 1",
+                "subheading": "Simple yet Elegant.",
+                "image": "iOS1",
+                "iap": true
 			},
 			{
 				"id": 23,
-				"tagline": "New update",
-				"name": "Professorify",
-				"subheading": "Introducing the world’s first experienced professor.",
-				"image": "iOS3",
-				"iap": true
+                "tagline": "Featured",
+                "name": "Nike AirForce 1",
+                "subheading": "Simple yet Elegant.",
+                "image": "iOS1",
+                "iap": true
 			},
 			{
 				"id": 24,
-				"tagline": "Featured",
-				"name": "SituationMe",
-				"subheading": "Your Situation. Dedicated.",
-				"image": "iOS4",
-				"iap": false
+                "tagline": "Featured",
+                "name": "Nike AirForce 1",
+                "subheading": "Simple yet Elegant.",
+                "image": "iOS1",
+                "iap": true
 			},
 		]
 	},
-	{
+    {
         "id": 4,
-		"type": "smallTable",
-		"title": "Today's Hottest Color Schemes",
-		"subtitle": "",
-		"items": [
-			{
-				"id": 31,
-				"tagline": "",
-				"name": "Red, Green, Blue",
-				"subheading": "",
-				"image": "Category1",
-				"iap": true
-			},
-			{
-				"id": 32,
-				"tagline": "",
-				"name": "Red, Green, Blue",
-				"subheading": "",
-				"image": "Category2",
-				"iap": false
-			},
-			{
-				"id": 33,
-				"tagline": "",
-				"name": "Red, Green, Blue",
-				"subheading": "",
-				"image": "Category3",
-				"iap": true
-			}
-		]
-	},
+        "type": "featured",
+        "title": "",
+        "subtitle": "",
+        "items": [
+            {
+                "id": 1,
+                "tagline": "Today's Popular Color Schemes",
+                "name": "Red, Green",
+                "subheading": "New York, NY",
+                "image": "Heading1",
+                "iap": true
+            },
+            {
+                "id": 2,
+                "tagline": "Today's Popular Color Schemes",
+                "name": "Purple, Yellow, Green",
+                "subheading": "Brunei",
+                "image": "Heading2",
+                "iap": false
+            },
+            {
+                "id": 3,
+                "tagline": "Today's Popular Color Schemes",
+                "name": "Gray, Yellow, Brown",
+                "subheading": "Torrance, CA",
+                "image": "Heading3",
+                "iap": true
+            }
+        ]
+    },
 ]

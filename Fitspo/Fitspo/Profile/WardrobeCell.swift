@@ -1,4 +1,4 @@
-/
+//
 //  WardrobeCell.swift
 //  Fitspo
 //
@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import Firebase
 
 class WardrobeCell: UICollectionViewCell {
     
     static let reuseIdentifier: String = String(describing: WardrobeCell.self)
     
+    let storage = Storage.storage()
     
     var symbol: WardrobeItem? {
         didSet {
             captionView.text = "DOES IT WORK"
+            
             if symbol?.photoURL != "" {
                 StorageManager.shared.getPicture(photoURL: symbol!.photoURL) { result in
                     switch result {
@@ -39,13 +42,18 @@ class WardrobeCell: UICollectionViewCell {
     let imageView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
+        img.layer.borderColor = UIColor.fitOrange.cgColor
+        img.layer.borderWidth = 3
+        img.layer.masksToBounds = false
+        img.clipsToBounds = true
+        img.layer.cornerRadius = 20
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .fitOrange
+        backgroundColor = .clear
 //        contentView.layer.borderWidth = 1
 //        contentView.layer.borderColor = UIColor.fitLavendar.cgColor
         

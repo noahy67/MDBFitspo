@@ -22,10 +22,9 @@ class SigninVC: UIViewController {
     
     private let titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "fitspo"
+        lbl.text = "Fitspo"
         lbl.textColor = .fitOrange
-        lbl.font = .systemFont(ofSize: 50, weight: .bold)
-        
+        lbl.font = UIFont(name: "ReemKufi-Bold", size: 50)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -34,7 +33,7 @@ class SigninVC: UIViewController {
         let lbl = UILabel()
         lbl.text = "Fashion inspired by you"
         lbl.textColor = .fitBlue
-        lbl.font = .systemFont(ofSize: 17, weight: .heavy)
+        lbl.font = UIFont(name: "ReemKufi", size: 17)
         
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl

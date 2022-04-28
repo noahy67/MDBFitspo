@@ -24,7 +24,7 @@ class SignUpVC: UIViewController {
         let lbl = UILabel()
         lbl.text = "Create Your Account,"
         lbl.textColor = .fitOrange
-        lbl.font = .systemFont(ofSize: 30, weight: .semibold)
+        lbl.font = UIFont(name: "ReemKufi-Bold", size: 30)
         
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -34,7 +34,7 @@ class SignUpVC: UIViewController {
         let lbl = UILabel()
         lbl.text = "Please fill in the blanks"
         lbl.textColor = .secondaryText
-        lbl.font = .systemFont(ofSize: 17, weight: .medium)
+        lbl.font = UIFont(name: "ReemKufi", size: 17)
         
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl

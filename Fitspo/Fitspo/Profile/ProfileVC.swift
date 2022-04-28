@@ -45,6 +45,35 @@ class ProfileVC: UIViewController {
         return btn
     }()
     
+    
+    private let toWardrobeButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle(" Go To Wardrobe ", for: .normal)
+        btn.setImage(UIImage(systemName: "book.closed")?.withTintColor(.fitOrange, renderingMode: .alwaysOriginal), for: .normal)
+        btn.setTitleColor(.fitOrange, for: .normal)
+        btn.backgroundColor = .clear
+        btn.layer.cornerRadius = 10
+        btn.layer.shadowRadius = 10
+        btn.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    private let createWardrobeButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(systemName: "plus")?.withTintColor(.fitOrange, renderingMode: .alwaysOriginal), for: .normal)
+        btn.setTitleColor(.fitOrange, for: .normal)
+        btn.backgroundColor = .clear
+        btn.layer.cornerRadius = 10
+        btn.layer.shadowRadius = 10
+        btn.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    
+    
+    
     private let createPostButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "plus.app")?.withTintColor(.fitOrange, renderingMode: .alwaysOriginal), for: .normal)
@@ -137,6 +166,7 @@ class ProfileVC: UIViewController {
    
     
     private func profileLabelConstraints() {
+        
         view.addSubview(usernameLabel)
         view.addSubview(userBioLabel)
         view.addSubview(followersLabel)
@@ -147,6 +177,8 @@ class ProfileVC: UIViewController {
         
         NSLayoutConstraint.activate([
             
+            
+
             profilePhotoTest.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: -10),
             profilePhotoTest.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             profilePhotoTest.widthAnchor.constraint(equalToConstant: 130),
@@ -173,6 +205,9 @@ class ProfileVC: UIViewController {
         view.addSubview(settingsButton)
         view.addSubview(createPostButton)
         
+        view.addSubview(toWardrobeButton)
+        view.addSubview(createWardrobeButton)
+        
         NSLayoutConstraint.activate([
             settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             settingsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -182,10 +217,29 @@ class ProfileVC: UIViewController {
             createPostButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             createPostButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             createPostButton.heightAnchor.constraint(equalToConstant: 40),
-            createPostButton.widthAnchor.constraint(equalToConstant: 45)
+            createPostButton.widthAnchor.constraint(equalToConstant: 45),
+            
+            toWardrobeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            toWardrobeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -130),
+            toWardrobeButton.heightAnchor.constraint(equalToConstant: 40),
+            toWardrobeButton.widthAnchor.constraint(equalToConstant: 45),
+            
+            createWardrobeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            createWardrobeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -230),
+            createWardrobeButton.heightAnchor.constraint(equalToConstant: 40),
+            createWardrobeButton.widthAnchor.constraint(equalToConstant: 45),
+            
+            
             ])
+        
+        
+        
         settingsButton.addTarget(self, action: #selector(didTapSettings(_:)), for: .touchUpInside)
         createPostButton.addTarget(self, action: #selector(didTapCreatePost(_:)), for: .touchUpInside)
+        
+        
+        toWardrobeButton.addTarget(self, action: #selector(didTaptoWardrobeProfile(_:)), for: .touchUpInside)
+        createWardrobeButton.addTarget(self, action: #selector(didTapCreateWardrobe(_:)), for: .touchUpInside)
     }
     
     @objc func didTapSettings(_ sender: UIButton) {
@@ -199,6 +253,27 @@ class ProfileVC: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
+    
+    
+    
+    @objc func didTaptoWardrobeProfile(_ sender: UIButton) {
+            let vc = WardrobeVC()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
+    
+    @objc func didTapCreateWardrobe(_ sneder: UIButton) {
+        let vc = CreateWardrobeVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
+    
     
     func updateProfile() {
 //        posts = DatabaseRequest.shared.getProfilePosts(vc: self)

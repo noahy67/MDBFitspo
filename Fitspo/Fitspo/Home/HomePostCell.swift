@@ -107,6 +107,8 @@ class HomePostCell: UICollectionViewCell {
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "ReemKufi-Thin", size: 15)
+        lbl.lineBreakMode = .byWordWrapping
+        lbl.numberOfLines = 0
         return lbl
     }()
     
@@ -302,6 +304,7 @@ class HomePostCell: UICollectionViewCell {
             
             captionView.leadingAnchor.constraint(equalTo: postProfilePicView.trailingAnchor, constant: 20),
             captionView.topAnchor.constraint(equalTo: usernameView.bottomAnchor, constant: 10),
+            captionView.trailingAnchor.constraint(equalTo: likeView.leadingAnchor, constant: -5),
             
             likeView.heightAnchor.constraint(equalTo: wardrobeView.heightAnchor, multiplier: 0.55),
             likeView.widthAnchor.constraint(equalTo: likeView.heightAnchor),

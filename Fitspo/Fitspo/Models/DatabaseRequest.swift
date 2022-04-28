@@ -67,21 +67,21 @@ class DatabaseRequest {
     
     func getWardrobeItems(vc: WardrobeVC, creatorURL: String)->[WardrobeItem] {
         var wardrobe: [WardrobeItem] = []
-        if (AuthManager.shared.isSignedIn()) {
-            userListener = db.collection("wardrobeItems").order(by: "postTimeStamp", descending: true)
+        
+            userListener = db.collection("wardrobeItems")
                 .addSnapshotListener { querySnapshot, error in
                 wardrobe = []
                 guard let documents = querySnapshot?.documents else { return }
                 for document in documents {
                     guard let item = try? document.data(as: WardrobeItem.self) else { continue }
                     print("GETTING WARDROBE STUFF: \(item.photoURL)")
-                    if item.photoURL != "" && item.creator == creatorURL {
+                    if item.photoURL != "" && item.creator == creatorURL{
                         wardrobe.append(item)
                     }
                 }
                 vc.reloadWardrobe(new: wardrobe)
             }
-        }
+        
         return wardrobe
     }
     

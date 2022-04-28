@@ -14,8 +14,6 @@ class WardrobeVC: UIViewController {
     
     var wardrobe: [WardrobeItem]?
     
-    let creatorURL = AuthManager.shared.currentUser?.uid
-    
     func reloadWardrobe(new: [WardrobeItem]) {
         wardrobe = new
         collectionView.reloadData()
@@ -43,21 +41,23 @@ class WardrobeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        guard let creatorURL = AuthManager.shared.currentUser?.uid else { return }
+        wardrobe = DatabaseRequest.shared.getWardrobeItems(vc: self, creatorURL: creatorURL)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        wardrobe = DatabaseRequest.shared.getWardrobeItems(vc: self, creatorURL: creatorURL!)
+        guard let creatorURL = AuthManager.shared.currentUser?.uid else { return }
+        wardrobe = DatabaseRequest.shared.getWardrobeItems(vc: self, creatorURL: creatorURL)
         
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .fitCream
-        collectionView.frame = view.bounds.inset(by: UIEdgeInsets(top: 300, left: 10, bottom: 100, right: 10))
+        collectionView.frame = view.bounds.inset(by: UIEdgeInsets(top: 100, left: 10, bottom: 100, right: 10))
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
-        
+        print("VIEWDIDNOADTWORKKSSS")
         view.addSubview(backButton)
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -65,7 +65,7 @@ class WardrobeVC: UIViewController {
             ])
         
         backButton.addTarget(self, action: #selector(didTapBackButton(_:)), for: .touchUpInside)
-        collectionView.reloadData()
+        
     }
     
     @objc func didTapBackButton(_ sender: UIButton) {
@@ -73,11 +73,11 @@ class WardrobeVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.reloadInputViews()
-//        guard let creatorURL = AuthManager.shared.currentUser?.uid else { return }
-//        wardrobe = DatabaseRequest.shared.getWardrobeItems(vc: self, creatorURL: creatorURL)
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.reloadInputViews()
+        guard let creatorURL = AuthManager.shared.currentUser?.uid else { return }
+        wardrobe = DatabaseRequest.shared.getWardrobeItems(vc: self, creatorURL: creatorURL)
+    }
 
 }
 
@@ -93,6 +93,7 @@ extension WardrobeVC: UICollectionViewDataSource {
         let thisWI = wardrobe?[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WardrobeCell.reuseIdentifier, for: indexPath) as! WardrobeCell
         cell.symbol = thisWI
+        print("CELL GOTTENN BABBYYY")
         return cell
     }
 }
@@ -100,6 +101,6 @@ extension WardrobeVC: UICollectionViewDataSource {
 extension WardrobeVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: view.frame.width * 0.9, height: 150)
     }
 }
